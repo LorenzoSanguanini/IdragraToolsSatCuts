@@ -11,24 +11,28 @@ name=Idragra Tools SatCuts
 qgisMinimumVersion=3.28
 description= IdragraTools extended with satellite-detected alfalfa cuts (forced cuts + irrigation halt around cuts)
 version=0.4.2-satcuts
-author=Enrico A. Chiaradia
-email=enrico.chiaradia@unimi.it
+author=Enrico A. Chiaradia, Lorenzo Sanguanini
+email=lsanguanini@ucdavis.edu
 
-about= The plugin shares user interfaces and tools to manage IdrAgra simulation
+about= Modified version of IdragraTools 0.4 (Enrico A. Chiaradia, University of Milan). Adds import of alfalfa cutting dates detected from satellite NDVI, suspension of irrigation around each cutting, and export of both to IdrAgra. Requires the patched IdrAgra executable from github.com/LorenzoSanguanini/IdragraSatCuts. Coexists with the original IdragraTools in the same QGIS profile.
 
-tracker=https://github.com/happ/idragratools
-repository=https://github.com/happ/idragratools
+tracker=https://github.com/LorenzoSanguanini/IdragraToolsSatCuts/issues
+repository=https://github.com/LorenzoSanguanini/IdragraToolsSatCuts
 # End of mandatory metadata
 
 # Recommended items:
 
-# Uncomment the following line and add your changelog:
-# changelog=
+changelog=0.4.2-satcuts
+    - alfalfa cutting dates detected from satellite NDVI, imported into idr_forced_cuts
+    - irr_halt_days on idr_crop_types: irrigation suspended around each cutting
+    - export of forced_cuts.txt and irr_halt_days.txt for the patched IdrAgra
+    - "Use satellite-detected cuts" option in Set simulation
+    - renamed provider (idragrasatcuts) to coexist with the original IdragraTools
 
 # Tags are comma separated with spaces allowed
-tags=water management, irrigation, water balance, idragra
+tags=water management, irrigation, water balance, idragra, alfalfa, remote sensing, ndvi
 
-homepage=https://github.com/happ/idragratools/wiki
+homepage=https://github.com/LorenzoSanguanini/IdragraToolsSatCuts
 category=Analysis
 icon=idragra_satcuts_logo.png
 # experimental flag

@@ -1,0 +1,13 @@
+######################################## Irrigation methods parameters  #########################################
+#														#
+#                                   Note: lines starting with <#> are comments                                  #
+# 														#
+#################################################################################################################
+
+# IrrMethNum: number of considered irrigation methods
+IrrMethNum = [%NUMIRRMET%]
+
+# List of irrigation methods parameters' files
+List =
+[%IRRMETLIST%]
+EndList =

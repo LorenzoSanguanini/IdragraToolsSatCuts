@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>518</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>4</number>
+     </property>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Base properties</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="id_LBL">
+         <property name="toolTip">
+          <string>Unique crop identifier</string>
+         </property>
+         <property name="text">
+          <string>Id [id]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="id">
+         <property name="toolTip">
+          <string>Unique identifier</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="name_LBL">
+         <property name="toolTip">
+          <string>Crop name</string>
+         </property>
+         <property name="text">
+          <string>Name [name]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="name">
+         <property name="toolTip">
+          <string>Crop name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="sowingdate_min_LBL">
+         <property name="toolTip">
+          <string>minimum sowing date expressed as day of the year [1-366]</string>
+         </property>
+         <property name="text">
+          <string>Sowing date [sowingdate_min]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="sowingdate_min">
+         <property name="toolTip">
+          <string>minimum sowing date expressed as day of the year [1-366]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="sowingdelay_max_LBL">
+         <property name="toolTip">
+          <string>maximum number of days when sowing can be performed</string>
+         </property>
+         <property name="text">
+          <string>Sowing delay [sowingdelay_max]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="sowingdelay_max">
+         <property name="toolTip">
+          <string>maximum number of days when sowing can be performed</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="harvestdate_max_LBL">
+         <property name="toolTip">
+          <string>maximum harvest date expressed as day of the year [1-366]</string>
+         </property>
+         <property name="text">
+          <string>Harvest date [harvestdate_max]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="harvestdate_max">
+         <property name="toolTip">
+          <string>maximum harvest date expressed as day of the year [1-366]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="harvnum_max_LBL">
+         <property name="toolTip">
+          <string>maximum number of harvests/cuts per the year</string>
+         </property>
+         <property name="text">
+          <string>Harvest num [harvnum_max]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="harvnum_max">
+         <property name="toolTip">
+          <string>maximum number of harvests/cuts per the year</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="cropsoverlap_LBL">
+         <property name="toolTip">
+          <string>minimum number of days between two subsequent crops in case of double cropping</string>
+         </property>
+         <property name="text">
+          <string>Crop overlap [cropsoverlap]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="cropsoverlap">
+         <property name="toolTip">
+          <string>minimum number of days between two subsequent crops in case of double cropping</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="tsowing_LBL">
+         <property name="toolTip">
+          <string>minimum sowing temperature [°C]</string>
+         </property>
+         <property name="text">
+          <string>T sowing [tsowing]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="tsowing">
+         <property name="toolTip">
+          <string>minimum sowing temperature [°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="tdaybase_LBL">
+         <property name="toolTip">
+          <string>minimum temperature for crop growth [°C]</string>
+         </property>
+         <property name="text">
+          <string>T base [tdaybase]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="tdaybase">
+         <property name="toolTip">
+          <string>minimum temperature for crop growth [°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="tcutoff_LBL">
+         <property name="toolTip">
+          <string>maximum temperature for crop growth [°C]</string>
+         </property>
+         <property name="text">
+          <string>T cutoff [tcutoff]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="tcutoff">
+         <property name="toolTip">
+          <string>maximum temperature for crop growth [°C]</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Vernalization</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="vern">
+         <property name="text">
+          <string>Vernalization required [vern]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="tv_min">
+         <property name="toolTip">
+          <string>minimum temperature for optimal vernalization [°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="tv_min_LBL">
+         <property name="toolTip">
+          <string>minimum temperature for optimal vernalization [°C]</string>
+         </property>
+         <property name="text">
+          <string>Tmin vern. [tv_min]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="tv_max_LBL">
+         <property name="toolTip">
+          <string>maximum temperature for optimal vernalization [°C]</string>
+         </property>
+         <property name="text">
+          <string>Tmax vern. [tv_max]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="tv_max">
+         <property name="toolTip">
+          <string>maximum temperature for optimal vernalization [°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="vfmin_LBL">
+         <property name="toolTip">
+          <string>vernalization factor at the beginning of the vernalization process [-]</string>
+         </property>
+         <property name="text">
+          <string>Vern. Factor [vfmin]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="vfmin">
+         <property name="toolTip">
+          <string>vernalization factor at the beginning of the vernalization process [-]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="vstart_LBL">
+         <property name="toolTip">
+          <string>number of days required for vernalization to start</string>
+         </property>
+         <property name="text">
+          <string>Vern. Start day [vstart]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="vstart">
+         <property name="toolTip">
+          <string>number of days required for vernalization to start</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="vend_LBL">
+         <property name="toolTip">
+          <string>number of days required for vernalization to end</string>
+         </property>
+         <property name="text">
+          <string>Vern. End day [vend]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="vend">
+         <property name="toolTip">
+          <string>number of days required for vernalization to end</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="vslope_LBL">
+         <property name="toolTip">
+          <string>vernalization curve parameter</string>
+         </property>
+         <property name="text">
+          <string>Vern. Curve param. [vslope]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="vslope">
+         <property name="toolTip">
+          <string>vernalization curve parameter</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Productivity</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="ph_r_LBL">
+         <property name="toolTip">
+          <string>photoperiod impact [0=Day-neutral plants, 1=Long-day plants, 2=Short-day plants]</string>
+         </property>
+         <property name="text">
+          <string>Photoperiod impact [ph_r]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="ph_r_CB"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="ph_r">
+         <property name="toolTip">
+          <string>photoperiod impact [0=Day-neutral plants, 1=Long-day plants, 2=Short-day plants]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="daylength_if_LBL">
+         <property name="toolTip">
+          <string>day length threshold below (above) which no accumulation of physiological time occurs for long-day (short-day) crops</string>
+         </property>
+         <property name="text">
+          <string>Above day length [daylength_if]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="daylength_if">
+         <property name="toolTip">
+          <string>day length threshold below (above) which no accumulation of physiological time occurs for long-day (short-day) crops</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="daylength_ins_LBL">
+         <property name="toolTip">
+          <string>day length threshold above (below) which maximum accumulation of physiological time occurs for long-day (short-day) crops</string>
+         </property>
+         <property name="text">
+          <string>Below day length [daylength_ins]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="daylength_ins">
+         <property name="toolTip">
+          <string>day length threshold above (below) which maximum accumulation of physiological time occurs for long-day (short-day) crops</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="wp_LBL">
+         <property name="toolTip">
+          <string>biomass water productivity [t/ha] (C4 crops = 0.30 – 0.35, C3 crops = 0.15 – 0.20, some leguminous crops minor than 0.15 t/ha)</string>
+         </property>
+         <property name="text">
+          <string>Biomass productivity [wp]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="wp">
+         <property name="toolTip">
+          <string>biomass water productivity [t/ha] (C4 crops = 0.30 – 0.35, C3 crops = 0.15 – 0.20, some leguminous crops minor than 0.15 t/ha)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="fsink_LBL">
+         <property name="toolTip">
+          <string>crop sink strength coefficient</string>
+         </property>
+         <property name="text">
+          <string>Crop sink [fsink]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="fsink">
+         <property name="toolTip">
+          <string>crop sink strength coefficient</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="tcrit_hs_LBL">
+         <property name="toolTip">
+          <string>critical temperature threshold for heat stress [°C]</string>
+         </property>
+         <property name="text">
+          <string>Tcrit Heat Stress [tcrit_hs]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="tcrit_hs">
+         <property name="toolTip">
+          <string>critical temperature threshold for heat stress [°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="tlim_hs_LBL">
+         <property name="toolTip">
+          <string>limit temperature threshold for heat stress[°C]</string>
+         </property>
+         <property name="text">
+          <string>Tlim Heat Stress [tlim_hs]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="tlim_hs">
+         <property name="toolTip">
+          <string>limit temperature threshold for heat stress[°C]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="hi_LBL">
+         <property name="toolTip">
+          <string>harvest index</string>
+         </property>
+         <property name="text">
+          <string>Harvest index [hi]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="hi">
+         <property name="toolTip">
+          <string>harvest index</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Hydrology</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="praw_LBL">
+         <property name="toolTip">
+          <string>parameter to compute RAW</string>
+         </property>
+         <property name="text">
+          <string>RAW param. [praw]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="praw">
+         <property name="toolTip">
+          <string>parameter to compute RAW</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="cl_cn_LBL">
+         <property name="toolTip">
+          <string>CN class</string>
+         </property>
+         <property name="text">
+          <string>CN class [cl_cn]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="cl_cn">
+         <property name="toolTip">
+          <string>CN class</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QLabel" name="ainterception_LBL">
+         <property name="toolTip">
+          <string>parameter to calculate interception</string>
+         </property>
+         <property name="text">
+          <string>Interception param. [ainterception]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="ainterception">
+         <property name="toolTip">
+          <string>parameter to calculate interception</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="3">
+        <widget class="QGroupBox" name="ky_GB">
+         <property name="title">
+          <string>Water stress</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="kyT_LBL">
+            <property name="toolTip">
+             <string>Water stress coefficient for the overall crop growth cycle.</string>
+            </property>
+            <property name="text">
+             <string>Overall [kyT]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="kyT">
+            <property name="toolTip">
+             <string>Water stress coefficient for the overall crop growth cycle.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="ky1_LBL">
+            <property name="toolTip">
+             <string>Water stress coefficient for the initial crop growth stage.</string>
+            </property>
+            <property name="text">
+             <string>Initial stage [ky1]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="ky1">
+            <property name="toolTip">
+             <string>Water stress coefficient for the initial crop growth stage.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="ky2_LBL">
+            <property name="toolTip">
+             <string>Water stress coefficient for the development crop growth stage.</string>
+            </property>
+            <property name="text">
+             <string>Development stage [ky2]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="ky2">
+            <property name="toolTip">
+             <string>Water stress coefficient for the development crop growth stage.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="ky3_LBL">
+            <property name="toolTip">
+             <string>Water stress coefficient for the middle crop growth stage.</string>
+            </property>
+            <property name="text">
+             <string>Middle stage [ky3]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="ky3">
+            <property name="toolTip">
+             <string>Water stress coefficient for the middle crop growth stage.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="ky4_LBL">
+            <property name="toolTip">
+             <string>Water stress coefficient for the end crop growth stage.</string>
+            </property>
+            <property name="text">
+             <string>End stage [ky4]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="ky4">
+            <property name="toolTip">
+             <string>Water stress coefficient for the end crop growth stage.</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QCheckBox" name="irrigation">
+         <property name="text">
+          <string>irrigation required [irrigation]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QComboBox" name="cl_cn_CB"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="adv_opts_lbl">
+         <property name="text">
+          <string>Advanced text option</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="adv_opts">
+         <property name="placeholderText">
+          <string>add here advanced simulation options ad par_nane = value couples separated by semicolon (e.g. PAR1=VAL1; PAR2 = VAL2; ecc.).</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="gdd">
+     <property name="toolTip">
+      <string>Growing Degree Days (°C) </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="kcb">
+     <property name="toolTip">
+      <string>Crop coefficient (-)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lai">
+     <property name="toolTip">
+      <string>Leaf area index (-)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="hc">
+     <property name="toolTip">
+      <string>Crop height (m) </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="sr">
+     <property name="toolTip">
+      <string>Root depth (m)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="EDIT_BTN">
+     <property name="text">
+      <string>View/Edit growing params</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

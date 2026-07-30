@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3792"
+   viewBox="0 0 48 48"
+   version="1.1"
+   sodipodi:docname="WaterTable.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="8.3752402"
+     inkscape:cx="11.580242"
+     inkscape:cy="18.016606"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3792"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.847606;stroke-linecap:round;stroke-linejoin:round;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+     id="rect1173"
+     width="47.128761"
+     height="47.128761"
+     x="0.55433083"
+     y="0.43493089"
+     rx="4.4902124"
+     ry="4.4902124" />
+  <path
+     id="path862"
+     style="fill:#a6cee3;stroke:#ffffff;stroke-width:0.289086;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000;stop-opacity:1"
+     d="M 47.683594,19.068359 C 42.071791,21.54807 31.622741,25.936575 25.074219,27.222656 18.555265,28.502931 7.727722,28.552729 0.554687,28.412109 V 41.275391 C 5.600812,39.9648 20.489552,36.081363 29.730469,33.3125 35.281645,31.649197 43.139485,29.004721 47.683594,27.464844 Z" />
+  <path
+     style="fill:#ffcc00;fill-opacity:1;stroke:#ffffff;stroke-width:0.289086;stroke-linecap:round;stroke-linejoin:round"
+     d="M 47.683594,27.464844 C 43.139485,29.004721 35.281645,31.649197 29.730469,33.3125 20.489552,36.081363 5.6008125,39.9648 0.5546875,41.275391 v 1.798828 c 0,2.487577 2.0026567,4.490234 4.4902344,4.490234 H 43.193359 c 2.487578,0 4.490235,-2.002657 4.490235,-4.490234 z"
+     id="path883" />
+  <path
+     id="rect888"
+     style="fill:#c87137;fill-opacity:1;stroke:#ffffff;stroke-width:0.289086;stroke-linecap:round;stroke-linejoin:round"
+     d="M 47.683594 13.880859 C 42.998078 14.958583 33.268109 17.143009 27.582031 18.029297 C 19.930331 19.221966 6.4739913 20.397967 0.5546875 20.886719 L 0.5546875 28.412109 C 7.7277222 28.552729 18.555265 28.502931 25.074219 27.222656 C 31.622741 25.936575 42.071791 21.54807 47.683594 19.068359 L 47.683594 13.880859 z " />
+  <rect
+     style="fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.847606;stroke-linecap:round;stroke-linejoin:round;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+     id="rect935"
+     width="47.128761"
+     height="47.128761"
+     x="0.55433083"
+     y="0.43493089"
+     rx="4.4902124"
+     ry="4.4902124" />
+  <path
+     id="rect916"
+     style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.58446;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     d="M 21.364102,6.3121624 V 33.551859 H 15.052765 V 6.3121624 Z"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     id="path838"
+     style="font-variation-settings:normal;vector-effect:none;fill:#a6cee3;fill-opacity:1;stroke:none;stroke-width:1.58446;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     d="M 21.364102,14.312162 V 33.551859 H 15.052765 V 14.312162 Z"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     id="path836"
+     style="font-variation-settings:normal;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.58446;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     d="M 21.364102,6.3121624 V 33.551859 m -6.311337,0 V 6.3121624"
+     sodipodi:nodetypes="cccc" />
+</svg>

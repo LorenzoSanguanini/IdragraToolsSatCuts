@@ -1,0 +1,15 @@
+# texture classification based on
+# USDA (1987) Soil Mechanics Level 1 Module 3 - USDA textural Soil Classification Study Guide
+idragracode;label
+1;sand
+2;loamy sand
+3;sandy loam
+4;loam
+5;silt loam
+6;silt
+7;sandy clay loam
+8;clay loam
+9;silty clay loam
+10;sandy clay
+11;silty clay
+12;clay

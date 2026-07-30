@@ -1,0 +1,4 @@
+ncells = [%NUMCELL%]
+table =
+[%CELLTABLE%]
+endtable =

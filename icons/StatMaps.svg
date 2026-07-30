@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="StatMaps.svg"
+   version="1.1"
+   viewBox="0 0 48 48"
+   id="svg3792">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     inkscape:snap-global="false"
+     inkscape:snap-nodes="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg3792"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-7"
+     inkscape:window-x="-7"
+     inkscape:cy="35.376526"
+     inkscape:cx="44.259331"
+     inkscape:zoom="6.7242085"
+     showgrid="false"
+     id="namedview7"
+     inkscape:window-height="1010"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g849"
+     transform="matrix(0.74868587,0,0,0.74868587,12.160256,2.826936)">
+    <path
+       id="path832"
+       d="m 12.789609,25.579218 11.599879,-13.830623 9.815281,8.1794 -15.169071,13.979341 z"
+       style="fill:#71c837;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       id="path836"
+       d="M 35.691933,20.671578 20.671578,37.327814 28.850979,45.209782 43.127753,26.917667 Z"
+       style="fill:#ffcc00;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       id="path838"
+       d="m 30.784292,46.696946 13.979341,-18.589549 2.974328,2.528179 0.148716,11.599878 -5.35379,5.651223 H 32.271456 Z"
+       style="fill:#c87137;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+  </g>
+  <g
+     aria-label="S"
+     id="text838"
+     style="font-size:62.9102px;line-height:1.25;font-family:Symbol;-inkscape-font-specification:Symbol;stroke:#ffffff;stroke-width:2.573;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none">
+    <path
+       d="M 33.491561,44.763634 H 2.1593334 V 43.627073 L 18.22478,24.366968 2.1593334,4.216045 V 3.1102017 H 32.539307 L 33.491561,13.492842 H 32.232128 Q 31.77136,9.2537758 29.866852,7.4414214 27.993062,5.6290671 24.429789,5.6290671 H 10.115262 L 23.231792,22.124563 8.4564968,39.91021 H 24.736968 q 4.085477,0 6.112856,-1.535893 2.058098,-1.535894 3.409684,-5.77496 l 1.136561,0.245743 z"
+       style="stroke:#ffffff;stroke-width:2.573;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path840" />
+  </g>
+  <g
+     aria-label="S"
+     id="text834"
+     style="font-size:62.9102px;line-height:1.25;font-family:Symbol;-inkscape-font-specification:Symbol;stroke-width:1.57276"
+     transform="translate(-20)">
+    <path
+       d="M 53.491561,44.763634 H 22.159333 V 43.627073 L 38.22478,24.366968 22.159333,4.216045 V 3.1102017 H 52.539307 L 53.491561,13.492842 H 52.232128 Q 51.77136,9.2537758 49.866852,7.4414214 47.993062,5.6290671 44.429789,5.6290671 H 30.115262 L 43.231792,22.124563 28.456497,39.91021 h 16.280471 q 4.085477,0 6.112856,-1.535893 2.058098,-1.535894 3.409684,-5.77496 l 1.136561,0.245743 z"
+       style="stroke-width:1.57276"
+       id="path843" />
+  </g>
+</svg>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="Soil.svg"
+   version="1.1"
+   viewBox="0 0 48 48"
+   id="svg3792">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     inkscape:snap-nodes="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg3792"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-7"
+     inkscape:window-x="-7"
+     inkscape:cy="20.659592"
+     inkscape:cx="-3.1389496"
+     inkscape:zoom="6.7242085"
+     showgrid="false"
+     id="namedview7"
+     inkscape:window-height="1010"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#c87137;fill-opacity:1;stroke:#ffffff;stroke-width:0.290368;stroke-linecap:round;stroke-linejoin:round"
+     id="rect1175"
+     width="47.337631"
+     height="47.337631"
+     x="0.33118418"
+     y="0.33118418"
+     rx="4.5101128"
+     ry="4.5101128" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.795169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 12.443772,5.0056049 C 10.63898,5.5133156 9.0164257,6.9879456 8.2515618,8.6441311 c -0.5969427,1.2925904 -1.0904712,3.2982239 0,4.2449499 0.9920691,0.861291 2.7933342,0.180357 3.9825962,-0.40428 1.674945,-0.823396 3.037318,-2.374367 3.772996,-4.0428092 0.383753,-0.870311 0.81641,-2.0870277 0.209601,-2.8299666 C 15.427821,4.6461047 13.667767,4.6612767 12.443772,5.0056049 Z"
+     id="path2388"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 23.139278,11.778674 c -1.944994,-0.334895 -4.159176,0.496854 -5.642397,1.958204 -1.157589,1.140533 -2.543094,3.125953 -1.941099,4.722934 0.547673,1.452869 2.568531,1.593278 3.964537,1.535711 1.966115,-0.08106 3.968283,-1.127469 5.429403,-2.617006 0.762175,-0.776987 1.729155,-1.915002 1.492988,-3.044122 -0.307043,-1.468007 -1.984352,-2.328595 -3.303432,-2.555721 z"
+     id="path2390"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.878831;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 7.8421244,29.239602 c -1.9588205,0.571401 -3.7198472,2.231028 -4.5499884,4.094987 -0.6478865,1.454744 -1.1835335,3.711988 0,4.777486 1.0767352,0.969344 3.0317272,0.202982 4.3224853,-0.454997 1.8178894,-0.926693 3.2965307,-2.672238 4.0949947,-4.549989 0.416507,-0.979494 0.886087,-2.348848 0.22749,-3.18499 -0.856262,-1.087097 -2.7665273,-1.07002 -4.0949816,-0.682497 z"
+     id="path2394"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 26.34538,24.607532 c -1.944995,-0.334894 -4.159177,0.496854 -5.642397,1.958204 -1.15759,1.140534 -2.543096,3.125954 -1.941099,4.722934 0.547673,1.45287 2.568531,1.593279 3.964536,1.535712 1.966114,-0.08106 3.968284,-1.127469 5.429404,-2.617007 0.762174,-0.776986 1.729154,-1.915002 1.492988,-3.044122 -0.307042,-1.468007 -1.984353,-2.328595 -3.303432,-2.555721 z"
+     id="path2396"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 37.38302,9.6178891 c -2.13337,0.6223219 -4.051325,2.4298369 -4.955439,4.4598929 -0.705622,1.58438 -1.289001,4.042769 0,5.203211 1.172684,1.055721 3.301886,0.221072 4.707664,-0.495543 1.979882,-1.00927 3.590289,-2.910361 4.459902,-4.95544 0.453619,-1.066776 0.965046,-2.558155 0.24776,-3.468807 C 40.910344,9.1772341 38.829855,9.1958321 37.38302,9.6178891 Z"
+     id="path2400"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 39.491675,24.95424 c -1.326938,-0.228475 -2.837528,0.338973 -3.849425,1.335954 -0.78975,0.778111 -1.734988,2.132629 -1.324286,3.222141 0.373645,0.991196 1.75234,1.086987 2.704738,1.047711 1.341347,-0.05531 2.707298,-0.769196 3.704121,-1.785406 0.519978,-0.530085 1.179686,-1.306478 1.018564,-2.076802 -0.209474,-1.001524 -1.35379,-1.588641 -2.253712,-1.743598 z"
+     id="path2402"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 44.846877,41.375517 C 44.572938,39.722944 43.392629,38.12503 41.95462,37.265874 40.832311,36.595335 39.0449,35.937706 38.060529,36.798059 c -0.895538,0.782724 -0.462315,2.451267 -0.05239,3.567781 0.57733,1.572487 1.855325,2.948647 3.307681,3.783334 0.757596,0.435401 1.827764,0.952245 2.573787,0.497299 0.969933,-0.591485 1.143066,-2.150201 0.957273,-3.270956 z"
+     id="path2412"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.957146;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 26.050392,37.880953 c -1.820653,-1.27428 -2.316875,0.186922 -4.466,0.75245 -1.677305,0.441378 -4.151902,0.564275 -4.25012,2.295894 -0.08935,1.575354 -0.02747,1.848701 1.411319,2.496519 2.026358,0.91238 4.516977,0.978403 6.656224,0.376566 1.115897,-0.313934 2.599122,-0.848552 2.860374,-1.977944 0.339663,-1.468362 -0.977048,-3.07928 -2.211797,-3.943485 z"
+     id="path2418"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.795169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 31.318845,5.3980347 c -1.073539,-1.537062 -3.000111,-2.5837395 -4.815773,-2.7607658 -1.417055,-0.138158 -3.473365,0.056064 -4.008347,1.3974114 -0.486701,1.2203051 0.749244,2.6970126 1.692793,3.627529 1.328883,1.3105307 3.241891,2.0863977 5.059519,2.2318307 0.948131,0.07586 2.239459,0.08387 2.741231,-0.73369 0.65237,-1.062935 0.05864,-2.7198936 -0.669423,-3.7623153 z"
+     id="path888"
+     sodipodi:nodetypes="sssssss"
+     inkscape:export-filename="C:\xampp\htdocs\idragra_simple\favicon.png"
+     inkscape:export-xdpi="8.1474895"
+     inkscape:export-ydpi="8.1474895" />
+</svg>

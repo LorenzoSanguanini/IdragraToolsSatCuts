@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3792"
+   viewBox="0 0 48 48"
+   version="1.1"
+   sodipodi:docname="Subplots.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="11.208333"
+     inkscape:cx="24"
+     inkscape:cy="27.211896"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3792"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g868">
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:#cccccc;fill-opacity:1;stroke:#747474;stroke-width:0.449883;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="rect857"
+       width="25.550117"
+       height="26.272654"
+       x="11.224941"
+       y="10.863673" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:0.449883;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000"
+       id="rect851"
+       width="17.431793"
+       height="8.5683279"
+       x="16.366163"
+       y="14.089166" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:0.449883;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000"
+       id="rect855"
+       width="17.431793"
+       height="8.5683279"
+       x="16.570707"
+       y="26.541426" />
+    <rect
+       style="fill:#747474;fill-opacity:1;stroke:#747474;stroke-width:0.101013;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000;stroke-opacity:1"
+       id="rect859"
+       width="5.6924701"
+       height="1.3228087"
+       x="22.063675"
+       y="11.830096" />
+    <rect
+       style="fill:#747474;fill-opacity:1;stroke:#747474;stroke-width:0.101013;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000;stroke-opacity:1"
+       id="rect861"
+       width="5.6924701"
+       height="1.3228087"
+       x="22.063675"
+       y="24.038479" />
+    <rect
+       style="fill:#747474;fill-opacity:1;stroke:#747474;stroke-width:0.101013;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000;stroke-opacity:1"
+       id="rect863"
+       width="5.6924701"
+       height="1.3228087"
+       x="-20.483139"
+       y="13.957698"
+       transform="rotate(-90)" />
+    <rect
+       style="fill:#747474;fill-opacity:1;stroke:#747474;stroke-width:0.101013;stroke-linejoin:round;stroke-miterlimit:10;stop-color:#000000;stroke-opacity:1"
+       id="rect865"
+       width="5.6924701"
+       height="1.3228087"
+       x="-33.346649"
+       y="13.957698"
+       transform="rotate(-90)" />
+  </g>
+</svg>

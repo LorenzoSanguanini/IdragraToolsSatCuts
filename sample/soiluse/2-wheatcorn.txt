@@ -1,0 +1,5 @@
+# wheat and corn alternate
+id = 2
+name = wheat and corn alternate
+descr = Wheat in autumn and shirt period corn in summer
+croplist = 4 2 

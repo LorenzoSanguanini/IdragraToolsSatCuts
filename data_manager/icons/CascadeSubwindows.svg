@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="CascadeSubwindows.svg"
+   version="1.1"
+   viewBox="0 0 48 48"
+   id="svg3792">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg3792"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-7"
+     inkscape:window-x="-7"
+     inkscape:cy="30.154984"
+     inkscape:cx="37.903103"
+     inkscape:zoom="13.944476"
+     showgrid="false"
+     id="namedview7"
+     inkscape:window-height="1010"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#cccccc;fill-opacity:1;stroke:#999999;stroke-width:0.582198;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="rect838"
+     width="28.745356"
+     height="26.667379"
+     x="3.5092721"
+     y="4.0557032"
+     ry="3.4632959" />
+  <path
+     id="rect842"
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.539687;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     d="M 4.8264757,8.5503762 V 26.242147 c 0,1.815027 1.4033809,3.276532 3.1462229,3.276532 H 27.792043 c 1.742843,0 3.14519,-1.461505 3.14519,-3.276532 V 8.5503762 Z" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="path849"
+     cx="24.642851"
+     cy="6.3143172"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse851"
+     cx="26.971643"
+     cy="6.3143172"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse853"
+     cx="29.300434"
+     cy="6.3143172"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <rect
+     style="fill:#cccccc;fill-opacity:1;stroke:#999999;stroke-width:0.582198;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="rect862"
+     width="28.745356"
+     height="26.667379"
+     x="8.1668568"
+     y="7.5488925"
+     ry="3.4632959" />
+  <path
+     id="path864"
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.539687;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     d="m 9.4840607,12.043565 v 17.691771 c 0,1.815027 1.4033813,3.276532 3.1462233,3.276532 h 19.819344 c 1.742843,0 3.14519,-1.461505 3.14519,-3.276532 V 12.043565 Z" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse866"
+     cx="29.300436"
+     cy="9.8075066"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse868"
+     cx="31.629227"
+     cy="9.8075066"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse870"
+     cx="33.958019"
+     cy="9.8075066"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <rect
+     style="fill:#41c4ea;fill-opacity:1;stroke:#999999;stroke-width:0.582198;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="rect874"
+     width="28.745356"
+     height="26.667379"
+     x="15.153234"
+     y="11.04208"
+     ry="3.4632959" />
+  <path
+     id="path876"
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.539687;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     d="m 16.470438,15.536753 v 17.691771 c 0,1.815027 1.403381,3.276532 3.146223,3.276532 h 19.819344 c 1.742843,0 3.14519,-1.461505 3.14519,-3.276532 V 15.536753 Z" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse878"
+     cx="36.286812"
+     cy="13.300694"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse880"
+     cx="38.615604"
+     cy="13.300694"
+     rx="0.99194604"
+     ry="0.99194586" />
+  <ellipse
+     style="fill:#ffffff;fill-opacity:1;stroke:#999999;stroke-width:0.344901;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+     id="ellipse882"
+     cx="40.944397"
+     cy="13.300694"
+     rx="0.99194604"
+     ry="0.99194586" />
+</svg>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog</class>
+ <widget class="QDialog" name="dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>515</width>
+    <height>372</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Base properties</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="id_LBL">
+         <property name="toolTip">
+          <string>The name of the irrigation method</string>
+         </property>
+         <property name="text">
+          <string>Id [id]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="id">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="toolTip">
+          <string>The identify of the method</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="name_LBL">
+         <property name="toolTip">
+          <string>The name of the irrigation method</string>
+         </property>
+         <property name="text">
+          <string>Name [name]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="name">
+         <property name="toolTip">
+          <string>The name of the irrigation method</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="qadaq_LBL">
+         <property name="toolTip">
+          <string>Irrigation water depth (mm)</string>
+         </property>
+         <property name="text">
+          <string>Irrigation water depth [qadaq]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="qadaq">
+         <property name="toolTip">
+          <string>Irrigation water depth (mm)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="k_stress_LBL">
+         <property name="toolTip">
+          <string>Water stress coefficient for the activation of irrigation from water diversions</string>
+         </property>
+         <property name="text">
+          <string>Start irrigation at (diversions) [k_stress]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="k_stress">
+         <property name="toolTip">
+          <string>Water stress coefficient for the activation of irrigation from water diversions</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="k_stresswells_LBL">
+         <property name="toolTip">
+          <string>Water stress coefficient for the activation of irrigation from private wells</string>
+         </property>
+         <property name="text">
+          <string>Start irrigation at (wells) [k_stresswells]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="k_stresswells">
+         <property name="toolTip">
+          <string>Water stress coefficient for the activation of irrigation from private wells</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="fw_LBL">
+         <property name="toolTip">
+          <string>Exposed and wetted soil fraction influenses evaporation processes</string>
+         </property>
+         <property name="text">
+          <string>Exposed and wetted soil fraction [fw]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="fw"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="irr_eff_LBL">
+         <property name="text">
+          <string>Irrigation efficiency [irr_eff]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="irr_eff"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Percolation model</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QLabel" name="min_a_LBL">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="text">
+          <string>Par. a [min_a, max_a]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="max_b">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="min_b">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="min_a">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="min_b_LBL">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="text">
+          <string>Par. b [min_b, max_b]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="max_a">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="max_b_LBL">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="text">
+          <string>maximum</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="max_a_LBL">
+         <property name="toolTip">
+          <string>Parameter of the percolation model</string>
+         </property>
+         <property name="text">
+          <string>minimun</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Irrigation losses model</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Irrigation losses model is described by the equation:
+# Irrigation_losse = a + b * wind_speed + c * average_temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="losses_a_LBL">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+         <property name="text">
+          <string>Par. a [losses_a]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="losses_a">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="losses_b_LBL">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+         <property name="text">
+          <string>Par. b [losses_b]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="losses_b">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="losses_c_LBL">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+         <property name="text">
+          <string>Par. c [losses_c]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="losses_c">
+         <property name="toolTip">
+          <string>Parameter of the irrigation losses model</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="f_interception">
+         <property name="text">
+          <string>Irrigation water is intercepted by foliage [f_interception]</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="adv_opts_lbl">
+         <property name="text">
+          <string>Advanced text option</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="adv_opts">
+         <property name="placeholderText">
+          <string>add here advanced simulation options ad par_nane = value couples separated by semicolon (e.g. PAR1=VAL1; PAR2 = VAL2; ecc.).</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="irr_time">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>The time steps during the day (1-24 hours)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="irr_fraction">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>The fraction of water to ditribute during irrigation period</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="EDIT_BTN">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>View/Edit Irrigation time</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,4 @@
+/venv/
+/test/
+.idea/
+/tools/crop_coef_20210920.py

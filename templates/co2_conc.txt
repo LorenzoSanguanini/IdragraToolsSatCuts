@@ -1,0 +1,2 @@
+Year	CO2
+[%YEAR_CONC%]

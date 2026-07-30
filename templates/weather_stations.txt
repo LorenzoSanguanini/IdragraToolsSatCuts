@@ -1,0 +1,12 @@
+################ Meterological station input file  #################################
+#									#
+#                   Note: lines starting with <#> are comments		#
+# 									#
+#########################################################################
+
+# number of weather stations:		
+StatNum = [%NUMOFSTATIONS%]	
+# Weather stations table:
+Table =
+sar.dat x32632            y32632
+[%STATIONSDATA%]

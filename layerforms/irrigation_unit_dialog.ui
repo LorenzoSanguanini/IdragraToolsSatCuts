@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>369</width>
+    <height>246</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="id_LBL">
+     <property name="toolTip">
+      <string>Unique feature identifier</string>
+     </property>
+     <property name="text">
+      <string>Id [id]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="id">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>Unique link id</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="name_LBL">
+     <property name="toolTip">
+      <string>The name of the link</string>
+     </property>
+     <property name="text">
+      <string>Name [name]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="name">
+     <property name="toolTip">
+      <string>The name of the link</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="node_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Inlet node [node]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="inlet_node_CB"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="inlet_node">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="outlet_node_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Outlet node [outlet_node]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="outlet_node_CB"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="outlet_node">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="distr_eff_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Internal distribution efficiency [distr_eff]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="distr_eff"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="expl_fact_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Rotation period multiplier [expl_fact]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QSpinBox" name="expl_factor">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="wat_shift_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Water distribution shift [wat_shift]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QSpinBox" name="wat_shift">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1</number>
+     </property>
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

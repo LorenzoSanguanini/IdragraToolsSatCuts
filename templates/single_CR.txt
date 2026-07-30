@@ -1,0 +1,17 @@
+# SourceAcronym: source name, that links the source to its subdistrict(s)
+SourceAcronym = [%WELLNAME%]
+# SourceId: source code (actually not used!)
+SourceId = [%WELLID%]
+# Qmax: maximum flow rate
+Qmax = [%QMAX%]
+# Qnom: nominal flow rate
+Qnom = [%QNOM%]
+
+# ActThrS: minimum activation threshold
+ActThrS = [%MINTRESHOLD%]
+
+# Table: flow rate ratio (with respect to nominal flow rate) activation for each activation threshold
+Table =
+Id	Activation threshold	Flow rate ratio
+[%TRESHOLDTABLE%]
+EndTable =

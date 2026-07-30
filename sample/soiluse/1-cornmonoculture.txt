@@ -1,0 +1,5 @@
+# corn monoculture
+id = 1
+name = corn monoculture
+descr = Monoculture with long-term zea mays cultivar
+croplist = 3

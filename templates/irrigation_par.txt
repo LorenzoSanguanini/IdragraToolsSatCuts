@@ -1,0 +1,52 @@
+######################################### Irrigation method input file  #########################################
+#														#
+#                                   Note: lines starting with <#> are comments                                  #
+# 														#
+#################################################################################################################
+
+# Irrigation method: [%NAME%]
+# Id: Irrigation method code
+Id = [%ID%]
+
+# Irrigation efficiency: [%IRR_EFF%]
+
+# Qadaq: irrigation water depth [mm]
+Qadaq = [%QADAQ%]
+
+# K_stress: water stress coefficient for the activation of irrigation from water diversions
+K_stress = [%KSTRESS%]
+
+# K_stresspozzi: water stress coefficient for the activation of irrigation from private wells
+K_stresswells = [%KSTRESSWELL%]
+
+# fw: exposed and wetted soil fraction
+fw = [%FW%]
+
+# Min_a & Max_a: parameters of percolation model
+Min_a = [%AMIN%]
+Max_a = [%AMAX%]
+
+# Min_b & Max_b: parameters of percolation model
+Min_b = [%BMIN%]
+Max_b = [%BMAX%]
+
+# a, b, c: parameters of irrigation losses model
+# Irrigation losses model is described by the equation:
+# Irrigation_losses = a + b * wind_speed + c * average_temperature
+# If irrigation losses do not depend from wind speed or average temperature, set:
+# a = fixed irrigation loss (expressed as a percentage between 0 & 100); b = 0; c = 0
+a = [%ALOSSES%]
+b = [%BLOSSES%]
+c = [%CLOSSES%]
+
+# InterceptionFlag: irrigation water is intercepted by foliage?
+# InterceptionFlag = TRUE or T if irrigation water is interception by foliage
+# InterceptionFlag = FALSE or F if irrigation water is not interception by foliage
+InterceptionFlag = [%FINTERCEPTION%]
+
+# Add here extra option(s)
+[%ADV_OPTS%]
+
+# Irrigation run time
+[%IRRTIMETABLE%]
+

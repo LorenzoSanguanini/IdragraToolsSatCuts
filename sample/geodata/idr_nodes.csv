@@ -1,0 +1,7 @@
+geometry;fid;id;name;node_type;q_sum;q_win;sum_start;sum_end;win_start;win_end;act_trshold;act_ratio
+POINT (520599.916041278 5019130.66790938);1;10;main diversion;11;10;;;;;;;
+POINT (520686.299902689 5019002.86712812);2;20;internal junction;2;;;;;;;;
+POINT (520563.232483692 5018904.64986103);3;30;field distribution;3;;;;;;;;
+POINT (520763.528778371 5018599.87832839);4;40;main drainage outlet;12;;;;;;;;
+POINT (520181.8 5018799.0);5;50;private well;14;;;;;;;;
+POINT (520783.53 5019146.8);6;60;public well;13;0.5;;;;;;1.0 0.8 0.5;0.5 0.7 0.9

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="Weather.svg"
+   version="1.1"
+   viewBox="0 0 48 48"
+   id="svg3792">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     inkscape:snap-nodes="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg3792"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="18.66726"
+     inkscape:cx="18.314413"
+     inkscape:zoom="13.448417"
+     showgrid="false"
+     id="namedview7"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#ffcc00;fill-opacity:1;stroke:#ffffff;stroke-width:0.290367;stroke-linecap:round;stroke-linejoin:round"
+     id="rect2289"
+     width="47.337498"
+     height="47.337498"
+     x="0.33125484"
+     y="0.33125195"
+     rx="4.5100999"
+     ry="4.5100999" />
+  <g
+     id="g1080">
+    <path
+       id="circle983"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.790474;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="M 24.784083,13.095097 C 23.7282,10.988922 21.028277,9.0128332 17.775009,9.0831591 13.167855,9.1827681 9.5137674,12.998352 9.6133806,17.605506 c 0.029828,1.377521 0.4003244,2.726217 1.0784014,3.925659 1.602116,-3.10394 4.703022,-5.079445 8.865966,-4.046665 1.180259,-2.128106 2.188484,-3.309096 5.226335,-4.389403 z"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.954184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 17.763247,7.6171922 -0.08286,-3.830187"
+       id="path985"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.954184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.1858948,17.8782 8.016084,17.79534"
+       id="path993"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.954184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 8.0147658,8.0378356 10.781709,10.6876"
+       id="path999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.954184;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 27.520771,7.6158474 24.871008,10.382791"
+       id="path1005"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <path
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.0677;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 29.06474,15.090427 c -3.153218,0.08307 -6.233804,1.933073 -7.707199,4.734926 -0.21248,0.718462 -1.181592,1.027626 -1.759433,0.53353 -1.043865,-0.729707 -2.429043,-0.916629 -3.625576,-0.478067 -1.374285,0.441673 -2.40916,1.690084 -2.634839,3.110082 -0.08602,0.45462 -0.104301,0.812952 -0.132419,1.280745 -0.952345,-0.03087 -1.812093,0.06838 -2.732156,0.384161 -1.9146905,0.651628 -3.5049611,2.071146 -4.2740163,3.951458 -0.762348,1.862044 -0.6427854,3.984413 0.2529043,5.77541 1.2234946,2.464137 4.031346,3.931746 6.747429,3.734183 8.560241,-0.01804 17.122342,0.02657 25.681922,-0.03882 2.284963,-0.239564 4.29151,-2.07288 4.762723,-4.317807 0.136267,-0.638646 0.153987,-1.437686 0.01787,-2.130879 -0.31156,-1.82509 -1.582172,-3.474409 -3.334218,-4.122582 -0.679666,-0.280087 -1.406826,-0.413133 -2.130251,-0.522836 0.77707,-2.851225 0.24767,-6.082207 -1.621641,-8.405649 -1.758098,-2.267407 -4.649109,-3.590284 -7.511102,-3.487849 z" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.26935;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 12.481515,44.055412 15.918354,40.29209"
+     id="path1053"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.26935;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 18.451033,44.055412 21.887872,40.29209"
+     id="path1055"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.26935;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 24.420549,44.055412 27.857388,40.29209"
+     id="path1057"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.26935;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 30.390067,44.055412 33.826906,40.29209"
+     id="path1059"
+     sodipodi:nodetypes="cc" />
+</svg>

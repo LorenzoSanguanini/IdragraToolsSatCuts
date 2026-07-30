@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog</class>
+ <widget class="QDialog" name="dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>315</width>
+    <height>475</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="id_LB">
+     <property name="toolTip">
+      <string>The station id</string>
+     </property>
+     <property name="text">
+      <string>Id [id]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="id">
+     <property name="toolTip">
+      <string>The geometric element identifier</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="name_LB">
+     <property name="toolTip">
+      <string>The name of the station</string>
+     </property>
+     <property name="text">
+      <string>Name [name]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="name">
+     <property name="toolTip">
+      <string>The name of the station</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lat_LB">
+     <property name="toolTip">
+      <string>Longitude in decimal degree (ET0)</string>
+     </property>
+     <property name="text">
+      <string>Latitude (decimal degree) [lat]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="lat">
+     <property name="toolTip">
+      <string>Longitude in decimal degree (ET0)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QToolButton" name="LAT_BTN">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="alt_LB">
+     <property name="toolTip">
+      <string>Set altitude in meters above sea level (ET0)</string>
+     </property>
+     <property name="text">
+      <string>Altitude (m) [alt]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="alt">
+     <property name="toolTip">
+      <string>Set altitude in meters above sea level (ET0)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QToolButton" name="ALT_BTN">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="stat_LB">
+     <property name="text">
+      <string>Statistics</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="3">
+    <widget class="QTableWidget" name="stat_TB"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="msgLBL">
+     <property name="text">
+      <string>Message:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="3">
+    <widget class="QTextBrowser" name="MSG_TE"/>
+   </item>
+   <item row="8" column="0" colspan="3">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="PLOT_METEO_VARS_BTN">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Plot meteorological data</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="PLOT_HEATMAP_CB"/>
+      </item>
+      <item>
+       <widget class="QComboBox" name="PLOT_PHENO_VARS_CB"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

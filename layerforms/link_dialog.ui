@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>251</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="flow_rate">
+     <property name="toolTip">
+      <string>The fraction of water conveyed from the inlet node</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="inlet_node">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="inf_losses_LBL">
+     <property name="toolTip">
+      <string>The fraction of water lost along the link path</string>
+     </property>
+     <property name="text">
+      <string>Infiltration losses [inf_losses]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="inf_losses">
+     <property name="toolTip">
+      <string>The fraction of water lost along the link path</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="name_LBL">
+     <property name="toolTip">
+      <string>The name of the link</string>
+     </property>
+     <property name="text">
+      <string>Name [name]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="flow_rate_LBL">
+     <property name="toolTip">
+      <string>The fraction of water conveyed from the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Flow rate [flow_rate]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="name">
+     <property name="toolTip">
+      <string>The name of the link</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="id">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>Unique link id</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="inlet_node_CB"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="outlet_node_LBL">
+     <property name="toolTip">
+      <string>The feature id of the outlet node</string>
+     </property>
+     <property name="text">
+      <string>Outlet node [outlet_node]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="inlet_node_LBL">
+     <property name="toolTip">
+      <string>The feature id of the inlet node</string>
+     </property>
+     <property name="text">
+      <string>Inlet node [inlet_node]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="outlet_node">
+     <property name="toolTip">
+      <string>The feature id of the outlet node</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="outlet_node_CB"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="id_LBL">
+     <property name="toolTip">
+      <string>Unique feature identifier</string>
+     </property>
+     <property name="text">
+      <string>Id [id]</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

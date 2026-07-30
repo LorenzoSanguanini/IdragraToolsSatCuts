@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3792"
+   viewBox="0 0 48 48"
+   version="1.1"
+   sodipodi:docname="PlotTool.svg"
+   inkscape:version="0.92.1 r15371">
+  <defs
+     id="defs9">
+    <filter
+       id="filter115041"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:collect="always"
+       inkscape:label="Drop Shadow">
+      <feBlend
+         id="feBlend115043"
+         in2="BackgroundImage"
+         mode="normal"
+         inkscape:collect="always"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4501" />
+      <feFlood
+         id="feFlood4503"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite4505"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4507"
+         in="composite1"
+         stdDeviation="3"
+         result="blur" />
+      <feOffset
+         id="feOffset4509"
+         dx="6"
+         dy="6"
+         result="offset" />
+      <feComposite
+         in2="offset"
+         id="feComposite4511"
+         in="fbSourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="2.3773667"
+     inkscape:cx="-11.577017"
+     inkscape:cy="16.62522"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3792" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title />
+        <dc:date>2013-07-15T19:10:44</dc:date>
+        <dc:description>An export icon</dc:description>
+        <dc:source>https://openclipart.org/detail/180891/export-icon-2-by-dibargatin-180891</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dibargatin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>android</rdf:li>
+            <rdf:li>export</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.79503727;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     d="M 4.8220525,45.349539 V 4.3555816"
+     id="path4838"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path5274"
+     d="M 3.1176121,43.557691 H 44.111571"
+     style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.79503727;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none" />
+  <rect
+     style="opacity:1;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:none;stroke-width:0.45605057;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     id="rect5382"
+     width="6.5510483"
+     height="13.023665"
+     x="7.48068"
+     y="29.764212" />
+  <rect
+     y="21.373127"
+     x="14.503511"
+     height="21.414753"
+     width="6.5510483"
+     id="rect5384"
+     style="opacity:1;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:none;stroke-width:0.58479398;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none" />
+  <rect
+     style="opacity:1;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:none;stroke-width:0.733078;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     id="rect5386"
+     width="6.5510483"
+     height="33.651756"
+     x="21.526344"
+     y="9.1361132" />
+  <rect
+     y="29.939022"
+     x="28.549175"
+     height="12.848851"
+     width="6.5510483"
+     id="rect5388"
+     style="opacity:1;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:none;stroke-width:0.45297948;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none" />
+  <rect
+     style="opacity:1;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:none;stroke-width:0.55917001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     id="rect5390"
+     width="6.5510483"
+     height="19.579203"
+     x="35.572083"
+     y="23.208673" />
+  <path
+     style="fill:none;stroke:#ff5555;stroke-width:1.89746368px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+     d="M 6.7450105,33.872344 13.475362,16.390913 24.488665,19.27535 32.704937,4.0665048 42.844167,26.093108"
+     id="path5392"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.79503727;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     d="M 2.9941934,6.3950059 4.8220525,4.3555816 6.3474254,6.6998448"
+     id="path5436"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.79503727;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+     d="m 42.826525,41.857973 1.829036,1.727423 -2.032261,1.930648"
+     id="path5452"
+     inkscape:connector-curvature="0" />
+  <path
+     transform="matrix(0.5394597,0,0,0.5394597,-218.29669,-1996.787)"
+     style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#610850;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter115041);enable-background:new"
+     d="m 449.82112,3770.0549 -0.48081,-48.726 33.95667,33.8223 -13.57345,1.8041 9.54446,23.2356 -4.53023,2.0169 -4.53024,2.0169 -9.79569,-23.1237 z"
+     id="path8157"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccc" />
+</svg>

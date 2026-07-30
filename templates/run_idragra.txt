@@ -1,0 +1,5 @@
+REM change dir
+[%DRIVE%]
+cd "[%SIMPATH%]"
+REM run idragra
+"[%PATHTOIDRAGRA%]" -f "[%IDRAGRAPAR%]"

@@ -1,0 +1,3 @@
+# List of crops to be simulated, columns must be separated by one or more tab characters
+[%SOILUSES%]
+endTable

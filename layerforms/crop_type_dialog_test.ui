@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>200</width>
+         <height>837</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+	<widget class="QLabel" name="name">
+		<property name="text">
+			<string>Name</string>
+		</property>
+	</widget>
+</item>
+
+<item row="0" column="1">
+		<widget class="QLineEdit" name="name">
+	</widget>
+</item>
+
+<item row="1" column="0">
+	<widget class="QLabel" name="sowingdate_min">
+		<property name="text">
+			<string>Sowing date</string>
+		</property>
+	</widget>
+</item>
+
+<item row="1" column="1">
+	<widget class="QSpinBox" name="sowingdate_min">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="2" column="0">
+	<widget class="QLabel" name="sowingdelay_max">
+		<property name="text">
+			<string>Sowing delay</string>
+		</property>
+	</widget>
+</item>
+
+<item row="2" column="1">
+	<widget class="QSpinBox" name="sowingdelay_max">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="3" column="0">
+	<widget class="QLabel" name="harvestdate_max">
+		<property name="text">
+			<string>Harvest date</string>
+		</property>
+	</widget>
+</item>
+
+<item row="3" column="1">
+	<widget class="QSpinBox" name="harvestdate_max">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="4" column="0">
+	<widget class="QLabel" name="harvnum_max">
+		<property name="text">
+			<string>Harvest num</string>
+		</property>
+	</widget>
+</item>
+
+<item row="4" column="1">
+	<widget class="QSpinBox" name="harvnum_max">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="5" column="0">
+	<widget class="QLabel" name="cropsoverlap">
+		<property name="text">
+			<string>Crop overlap</string>
+		</property>
+	</widget>
+</item>
+
+<item row="5" column="1">
+	<widget class="QSpinBox" name="cropsoverlap">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="6" column="0">
+	<widget class="QLabel" name="tsowing">
+		<property name="text">
+			<string>T sowing</string>
+		</property>
+	</widget>
+</item>
+
+<item row="6" column="1">
+	<widget class="QDoubleSpinBox" name="tsowing">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="7" column="0">
+	<widget class="QLabel" name="tdaybase">
+		<property name="text">
+			<string>T base</string>
+		</property>
+	</widget>
+</item>
+
+<item row="7" column="1">
+	<widget class="QDoubleSpinBox" name="tdaybase">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="8" column="0">
+	<widget class="QLabel" name="tcutoff">
+		<property name="text">
+			<string>T cutoff</string>
+		</property>
+	</widget>
+</item>
+
+<item row="8" column="1">
+	<widget class="QDoubleSpinBox" name="tcutoff">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="10" column="0">
+	<widget class="QLabel" name="tv_min">
+		<property name="text">
+			<string>Tmin vern.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="10" column="1">
+	<widget class="QDoubleSpinBox" name="tv_min">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="11" column="0">
+	<widget class="QLabel" name="tv_max">
+		<property name="text">
+			<string>Tmax vern.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="11" column="1">
+	<widget class="QDoubleSpinBox" name="tv_max">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="12" column="0">
+	<widget class="QLabel" name="vfmin">
+		<property name="text">
+			<string>Vern. Factor</string>
+		</property>
+	</widget>
+</item>
+
+<item row="12" column="1">
+	<widget class="QDoubleSpinBox" name="vfmin">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="13" column="0">
+	<widget class="QLabel" name="vstart">
+		<property name="text">
+			<string>Vern. Start day</string>
+		</property>
+	</widget>
+</item>
+
+<item row="13" column="1">
+	<widget class="QSpinBox" name="vstart">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="14" column="0">
+	<widget class="QLabel" name="vend">
+		<property name="text">
+			<string>Vern. End day</string>
+		</property>
+	</widget>
+</item>
+
+<item row="14" column="1">
+	<widget class="QSpinBox" name="vend">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="15" column="0">
+	<widget class="QLabel" name="vslope">
+		<property name="text">
+			<string>Vern. Curve param.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="15" column="1">
+	<widget class="QDoubleSpinBox" name="vslope">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="16" column="0">
+	<widget class="QLabel" name="ph_r">
+		<property name="text">
+			<string>Photoperiod impact</string>
+		</property>
+	</widget>
+</item>
+
+<item row="16" column="1">
+	<widget class="QComboBox" name="ph_r">
+		<item><property name="text"><string>Day-neutral plants</string></property></item>
+		<item><property name="text"><string>Long-day plants</string></property></item>
+		<item><property name="text"><string>Short-day plants</string></property></item>
+	</widget>
+</item>
+
+<item row="17" column="0">
+	<widget class="QLabel" name="daylength_if">
+		<property name="text">
+			<string>Above day length</string>
+		</property>
+	</widget>
+</item>
+
+<item row="17" column="1">
+	<widget class="QSpinBox" name="daylength_if">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="18" column="0">
+	<widget class="QLabel" name="daylength_ins">
+		<property name="text">
+			<string>Below day length</string>
+		</property>
+	</widget>
+</item>
+
+<item row="18" column="1">
+	<widget class="QSpinBox" name="daylength_ins">
+		<property name="minimum"><number>1</number></property>
+		<property name="maximum"><number>366</number></property>
+	</widget>
+</item>
+
+<item row="19" column="0">
+	<widget class="QLabel" name="wp">
+		<property name="text">
+			<string>Biomass productivity</string>
+		</property>
+	</widget>
+</item>
+
+<item row="19" column="1">
+	<widget class="QDoubleSpinBox" name="wp">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>100</number></property>
+	</widget>
+</item>
+
+<item row="20" column="0">
+	<widget class="QLabel" name="fsink">
+		<property name="text">
+			<string>Crop sink</string>
+		</property>
+	</widget>
+</item>
+
+<item row="20" column="1">
+	<widget class="QDoubleSpinBox" name="fsink">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="21" column="0">
+	<widget class="QLabel" name="tcrit_hs">
+		<property name="text">
+			<string>Tcrit Heat Stress</string>
+		</property>
+	</widget>
+</item>
+
+<item row="21" column="1">
+	<widget class="QDoubleSpinBox" name="tcrit_hs">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="22" column="0">
+	<widget class="QLabel" name="tlim_hs">
+		<property name="text">
+			<string>Tlim Heat Stress</string>
+		</property>
+	</widget>
+</item>
+
+<item row="22" column="1">
+	<widget class="QDoubleSpinBox" name="tlim_hs">
+		<property name="minimum"><number>-50</number></property>
+		<property name="maximum"><number>50</number></property>
+	</widget>
+</item>
+
+<item row="23" column="0">
+	<widget class="QLabel" name="hi">
+		<property name="text">
+			<string>Harvest index</string>
+		</property>
+	</widget>
+</item>
+
+<item row="23" column="1">
+	<widget class="QDoubleSpinBox" name="hi">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="24" column="0">
+	<widget class="QLabel" name="praw">
+		<property name="text">
+			<string>RAW param.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="24" column="1">
+	<widget class="QDoubleSpinBox" name="praw">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="25" column="0">
+	<widget class="QLabel" name="ainterception">
+		<property name="text">
+			<string>Interception param.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="25" column="1">
+	<widget class="QDoubleSpinBox" name="ainterception">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="26" column="0">
+	<widget class="QLabel" name="ky">
+		<property name="text">
+			<string>Yeald reduction param.</string>
+		</property>
+	</widget>
+</item>
+
+<item row="26" column="1">
+	<widget class="QDoubleSpinBox" name="ky">
+		<property name="minimum"><number>0</number></property>
+		<property name="maximum"><number>1</number></property>
+	</widget>
+</item>
+
+<item row="27" column="0">
+	<widget class="QLabel" name="cl_cn">
+		<property name="text">
+			<string>CN class</string>
+		</property>
+	</widget>
+</item>
+
+<item row="27" column="1">
+	<widget class="QComboBox" name="cl_cn">
+		<item><property name="text"><string>1</string></property></item>
+		<item><property name="text"><string>2</string></property></item>
+		<item><property name="text"><string>3</string></property></item>
+		<item><property name="text"><string>4</string></property></item>
+		<item><property name="text"><string>5</string></property></item>
+	</widget>
+</item>
+
+<item row="29" column="0">
+	<widget class="QLabel" name="gdd">
+		<property name="text">
+			<string>Growing degree days</string>
+		</property>
+	</widget>
+</item>
+
+<item row="29" column="1">
+		<widget class="QLineEdit" name="gdd">
+	</widget>
+</item>
+
+<item row="30" column="0">
+	<widget class="QLabel" name="kws">
+		<property name="text">
+			<string>Water stress coefficient</string>
+		</property>
+	</widget>
+</item>
+
+<item row="30" column="1">
+		<widget class="QLineEdit" name="kws">
+	</widget>
+</item>
+
+<item row="31" column="0">
+	<widget class="QLabel" name="kcb">
+		<property name="text">
+			<string>Crop coefficient</string>
+		</property>
+	</widget>
+</item>
+
+<item row="31" column="1">
+		<widget class="QLineEdit" name="kcb">
+	</widget>
+</item>
+
+<item row="32" column="0">
+	<widget class="QLabel" name="lai">
+		<property name="text">
+			<string>Leaf area index</string>
+		</property>
+	</widget>
+</item>
+
+<item row="32" column="1">
+		<widget class="QLineEdit" name="lai">
+	</widget>
+</item>
+
+<item row="33" column="0">
+	<widget class="QLabel" name="cropheigth">
+		<property name="text">
+			<string>Crop heigth</string>
+		</property>
+	</widget>
+</item>
+
+<item row="33" column="1">
+		<widget class="QLineEdit" name="cropheigth">
+	</widget>
+</item>
+
+<item row="34" column="0">
+	<widget class="QLabel" name="rootdepth">
+		<property name="text">
+			<string>Root depth</string>
+		</property>
+	</widget>
+</item>
+
+<item row="34" column="1">
+		<widget class="QLineEdit" name="rootdepth">
+	</widget>
+</item>
+
+
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>69</width>
+         <height>411</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

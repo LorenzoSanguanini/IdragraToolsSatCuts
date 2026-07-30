@@ -38,7 +38,7 @@ def exportBat(outPath, feedback = None,tr=None):
 	#TODO: make something of better
 	#path2cropcoeff = 'C:/idragra_code/cropcoeff_v4bis/CropCoef_v4/for_redistribution_files_only/CropCoef_v4.exe'
 	#path2idragra = 'C:/idragra_code/Idragra/idragra_20210211ASC.exe'
-	s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+	s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
 	path2cropcoeff = s.value('cropcoeffPath', '')
 	path2idragra = s.value('idragraPath', '')
 
@@ -63,7 +63,7 @@ def exportBat(outPath, feedback = None,tr=None):
 
 
 def exportCropCoefBat(outPath):
-	s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+	s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
 	path2cropcoeff = s.value('cropcoeffPath', '')
 
 	# save to file
@@ -78,7 +78,7 @@ def exportCropCoefBat(outPath):
 
 
 def exportIdrAgraBat(outPath):
-	s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+	s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
 	path2idragra = s.value('idragraPath', '')
 
 	# save to file

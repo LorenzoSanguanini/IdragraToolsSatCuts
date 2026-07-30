@@ -8,7 +8,7 @@ from matplotlib.backend_bases import MouseButton
 import matplotlib.dates as mdt
 from qgis.PyQt import QtWidgets, QtCore, QtGui
 
-from data_manager.dialogs.edit_legend import EditLegend
+from ..data_manager.dialogs.edit_legend import EditLegend
 
 
 class ChartToolBar(NavigationToolbar2QT):

@@ -35,7 +35,7 @@ import processing
 from qgis._core import QgsCoordinateReferenceSystem, QgsRectangle, QgsRasterLayer, QgsRasterBlockFeedback, \
     QgsRasterFileWriter, QgsRasterPipe, QgsRasterProjector, QgsProject
 
-from tools.delete_raster_from_DB import deleteRasterFromDB
+from ..tools.delete_raster_from_DB import deleteRasterFromDB
 
 
 def importRasterInDB(DBM, rasterFileName, tableName, crs=QgsCoordinateReferenceSystem(),

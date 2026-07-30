@@ -19,7 +19,7 @@ from matplotlib.gridspec import GridSpec
 from datetime import datetime,timedelta
 
 # import as module
-from report.report_builder import ReportBuilder
+from ..report.report_builder import ReportBuilder
 
 class CheckDatabaseBuilder(ReportBuilder):
 

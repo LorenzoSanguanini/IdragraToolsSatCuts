@@ -36,11 +36,11 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5 import QtSql
 
-from IdragraTools.layerforms.utils import *
-from IdragraTools.tools.array_table_model import ArrayTableModel
-from IdragraTools.data_manager.chart_widget import ChartWidget
+from IdragraToolsSatCuts.layerforms.utils import *
+from IdragraToolsSatCuts.tools.array_table_model import ArrayTableModel
+from IdragraToolsSatCuts.data_manager.chart_widget import ChartWidget
 
-from layerforms.utils import updateLineEdit, updateSelected, updateComboItems
+from ..layerforms.utils import updateLineEdit, updateSelected, updateComboItems
 
 
 def formOpen(dialog, layerid, featureid):
@@ -65,7 +65,7 @@ def formOpen(dialog, layerid, featureid):
     actTrsLE.setHidden(True)
     actRatioLE.setHidden(True)
 
-    tr = qgis.utils.plugins['IdragraTools'].tr
+    tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
     global nodeTypes
     # populate combo
@@ -149,7 +149,7 @@ def setEditMode(mode):
 
 
 def showEditDialog():
-    tr = qgis.utils.plugins['IdragraTools'].tr
+    tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
     # extract data
     t = parseString(actTrsLE.text(),' ',toSpecialFloat)
 
@@ -160,7 +160,7 @@ def showEditDialog():
 
     header = [tr('Activation thresholds'), tr('Flow rate ratio')]
     # make a dialog
-    from IdragraTools.layerforms.table_dialog import TableDialog
+    from IdragraToolsSatCuts.layerforms.table_dialog import TableDialog
     dlg = TableDialog(parent=myDialog, title='View/edit table')
     # make the model with data
     global aModel
@@ -187,15 +187,15 @@ def updateTableValues():
 
 def plotActualDischarge(wsId,name):
     # make a dialog
-    #from IdragraTools.layerforms.chart_dialog import ChartDialog
-    tr = qgis.utils.plugins['IdragraTools'].tr
+    #from IdragraToolsSatCuts.layerforms.chart_dialog import ChartDialog
+    tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
     cw = ChartWidget(myDialog, tr('Measured discharges from %s'%name),False,False)
     cw.setAxis(pos=111, secondAxis=False, label=[tr('Main plot')])
 
     # add timeseries
     plotList = [
-                {'name':qgis.utils.plugins['IdragraTools'].WATERSOURCENAME['node_act_disc'],
+                {'name':qgis.utils.plugins['IdragraToolsSatCuts'].WATERSOURCENAME['node_act_disc'],
                  'plot':'True','color':'#416FA6','style': '-','axes':'y',
                  'table':'node_act_disc','id':wsId},
                 ]
@@ -205,7 +205,7 @@ def plotActualDischarge(wsId,name):
     for p in plotList:
         shadow = False
         # get data
-        dateTimeList, values = qgis.utils.plugins['IdragraTools'].DBM.getTimeSeries(p['table'],p['id'])
+        dateTimeList, values = qgis.utils.plugins['IdragraToolsSatCuts'].DBM.getTimeSeries(p['table'],p['id'])
         cw.addTimeSerie(dateTimeList,values,lineType='-',color=p['color'],name = p['name'],yaxis = p['axes'],shadow= shadow)
         if p['axes']=='y': y1Title.append(p['name'])
         if p['axes']=='y2': y2Title.append(p['name'])

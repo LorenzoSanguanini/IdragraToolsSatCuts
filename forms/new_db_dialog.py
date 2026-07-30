@@ -50,7 +50,7 @@ from datetime import datetime
 # ~ uiFilePath = os.path.abspath(os.path.join(os.path.dirname(__file__), 'project_dialog.ui'))
 # ~ print('uiFilePath: %s'%uiFilePath)
 # ~ FormClass = uic.loadUiType(uiFilePath)[0]
-from forms.custom_input import FieldInput, CheckInput, DateInput, FileInput, FileOutput, CRSInput
+from ..forms.custom_input import FieldInput, CheckInput, DateInput, FileInput, FileOutput, CRSInput
 
 
 class NewDbDialog(QDialog):

@@ -47,7 +47,7 @@ import numpy as np
 import random
 from datetime import datetime
 
-from data_manager.chart_tool_bar import ChartToolBar
+from ..data_manager.chart_tool_bar import ChartToolBar
 
 
 class ChartDialog(QDialog):

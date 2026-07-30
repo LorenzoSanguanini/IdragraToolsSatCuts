@@ -48,7 +48,7 @@ from PyQt5 import QtSql
 from PyQt5.QtXml import QDomDocument
 from qgis import processing
 
-from tools.export_geodata_vector import ExportGeodataVector
+from .tools.export_geodata_vector import ExportGeodataVector
 from .forms.report_view import ReportDialog
 from .tools.show_message import showInfoMessageBox, showCriticalMessageBox
 from .tools.network_analyst import NetworkAnalyst
@@ -69,10 +69,9 @@ from .tools.export_land_use import exportLandUse
 from .tools.export_water_sources import makeDischSerie, exportWaterSources
 from .tools.write_pars_to_template import writeParsToTemplate
 
+# NOTE (SatCuts): see __init__.py - the plugin folder is deliberately NOT added to
+# sys.path, so that this plugin can coexist with the original IdragraTools.
 cmd_folder = os.path.split(inspect.getfile(inspect.currentframe()))[0]
-
-if cmd_folder not in sys.path:
-    sys.path.insert(0, cmd_folder)
 
 from qgis.core import QgsProcessingAlgorithm, QgsApplication, QgsProject, QgsVectorLayer, QgsGeometry, QgsFeature, \
     QgsFeatureRequest, QgsExpression
@@ -161,7 +160,7 @@ class IdrAgraTools():
         self.provider = IdrAgraToolsProvider()
 
         # TODO: check the latest version of idragra and cropcoef
-        self.s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+        self.s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
         if self.s.value('idragraPath','')=='': self.s.setValue('idragraPath', os.path.join(self.plugin_dir,'bin','idragra.exe'))
         if self.s.value('cropcoeffPath','')=='': self.s.setValue('cropcoeffPath', os.path.join(self.plugin_dir,'bin','cropcoef.exe'))
         if self.s.value('MCRpath', '') == '': self.s.setValue('MCRpath',checkMatlabInstalled(version= '9.9'))
@@ -413,6 +412,7 @@ class IdrAgraTools():
                         'WSFILE':'weather_stations.dat',
                         'CANOPYRESMOD':1,
                         'CO2FILE': 'CO2_conc.dat',
+                        'USESATCUTS': False,
                         'MODE':0,
                         'CAPILLARYFLAG':'F',
                         'NOFMETEO':'',
@@ -497,7 +497,7 @@ class IdrAgraTools():
 
     def initGui(self):
         # add Main Menu
-        self.mainMenu = self._addmenu(self.iface.mainWindow().menuBar(), 'IdrAgraTools', 'IdrAgraTools')
+        self.mainMenu = self._addmenu(self.iface.mainWindow().menuBar(), 'IdrAgraSatCuts', 'IdrAgra SatCuts')
         self.dbMenu = self._addmenu(self.mainMenu, 'Database', self.tr('Start'),True)
         self._addmenuitem(self.dbMenu, 'LoadDB', self.tr('Open'), self.openDB, True)
         self._addmenuitem(self.dbMenu, 'NewDB', self.tr('New'), self.newDB, True)
@@ -524,6 +524,8 @@ class IdrAgraTools():
         self._addmenuitem(self.landuseMenu, 'ImportLandUseMap', self.tr('Import land use map [vector]'), self.importLandUseMap, False)
         self._addmenuitem(self.landuseMenu, 'SetLandUse', self.tr('Set/edit land use map [raster]'),
                           self.setRasterLanduse, False)
+        self._addmenuitem(self.landuseMenu, 'ImportSatelliteCuts', self.tr('Import satellite-detected cuts'),
+                          self.importSatelliteCuts, False)
 
         #self._addmenuitem(self.landuseMenu, 'EditLandUseType', self.tr('Edit land use type'), self.printSome, False)
         self.mainMenu.addMenu(self.landuseMenu)
@@ -725,7 +727,7 @@ class IdrAgraTools():
         return QgsApplication.translate('IdrAgraTools', source_text)
 
     def setSettings(self):
-        s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+        s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
         if not s.value('bufDist'):
             s.setValue('bufDist', str(self.bufDist))
         else:
@@ -753,7 +755,7 @@ class IdrAgraTools():
         if result:
             res = dlg.getData()
             ### set executable path
-            s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+            s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
             s.setValue('idragraPath', res['idragraPath'])
             s.setValue('cropcoeffPath', res['cropcoeffPath'])
             s.setValue('MCRpath', res['MCRpath'])
@@ -828,8 +830,8 @@ class IdrAgraTools():
 
     def updatePars(self):
         proj = QgsProject.instance()
-        #proj.writeEntry('IdrAgraTools', 'dbname', str(self.SIMDIC['DBFILE']))
-        proj.writeEntry('IdrAgraTools', 'simsettings', str(self.SIMDIC))
+        #proj.writeEntry('IdrAgraToolsSatCuts', 'dbname', str(self.SIMDIC['DBFILE']))
+        proj.writeEntry('IdrAgraToolsSatCuts', 'simsettings', str(self.SIMDIC))
         #print('OK update pars',str(self.SIMDIC))
         uri = 'geopackage:'+self.SIMDIC['DBFILE']+'?projectName='+self.PRJNAME
         #print('updatePars, CRS', self.SIMDIC['CRS'])
@@ -859,13 +861,13 @@ class IdrAgraTools():
         # print(crs)
 
         if (os.path.isfile(self.SIMDIC['SOURCE_DB'])):
-            processing.run("idragratools:IdragraCreateDB", {'DB_FILENAME': self.SIMDIC['DBFILE'],
+            processing.run("idragrasatcuts:IdragraCreateDB", {'DB_FILENAME': self.SIMDIC['DBFILE'],
                                                             'CRS': crs,
                                                             'LOAD_SAMPLE_PAR': False,
                                                             'LOAD_SAMPLE_DATA': False},
                            context=None, feedback=progress, is_child_algorithm=False)
 
-            res = processing.run("idragratools:IdragraImportFromExistingDB", {'SOURCE_DB': self.SIMDIC['SOURCE_DB'],
+            res = processing.run("idragrasatcuts:IdragraImportFromExistingDB", {'SOURCE_DB': self.SIMDIC['SOURCE_DB'],
                                                                         'ASSETS': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
                                                                                    12, 13, 14, 15, 16, 17, 18, 19, 20,
                                                                                    21, 22, 23, 24, 25, 26, 27, 28, 29,
@@ -877,14 +879,37 @@ class IdrAgraTools():
             self.SIMDIC['WATERTABLEMAP'] = res['WATERTABLE']
             self.SIMDIC['ELEVMAP'] = res['ELEVATION']
         else:
-            processing.run("idragratools:IdragraCreateDB", {'DB_FILENAME': self.SIMDIC['DBFILE'],
+            processing.run("idragrasatcuts:IdragraCreateDB", {'DB_FILENAME': self.SIMDIC['DBFILE'],
                                                             'CRS': crs,
                                                             'LOAD_SAMPLE_PAR': bool(self.SIMDIC['LOAD_SAMPLE_PAR']),
                                                             'LOAD_SAMPLE_DATA': bool(self.SIMDIC['LOAD_SAMPLE_DATA'])},
                            context=None, feedback=progress, is_child_algorithm=False)
 
+    def readSimSettingsFromProject(self, proj):
+        """Read the simulation settings stored in the QGIS project.
+
+        The project embedded in the geopackage may have been written by the
+        ORIGINAL IdragraTools (key 'IdrAgraTools') or by this plugin
+        (key 'IdrAgraToolsSatCuts'), so both are tried.
+
+        This function must NEVER raise: it is also called from inside a path
+        preprocessor, i.e. from a callback invoked by the C++ side during
+        QgsProject.read(). An exception raised there crashes QGIS instead of
+        producing a normal Python error.
+        """
+        for key in ('IdrAgraToolsSatCuts', 'IdrAgraTools'):
+            try:
+                txt = proj.readEntry(key, 'simsettings')[0]
+                if txt:
+                    val = eval(txt)
+                    if isinstance(val, dict):
+                        return val
+            except Exception:
+                pass
+        return {}
+
     def openDB(self, dbpath=None):
-        s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+        s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
         if not dbpath:
             #print('dbpath in openDB',dbpath)
             dbpath = QFileDialog.getOpenFileName(None, self.tr('Open idragra database'), s.value('lastPath'),
@@ -895,18 +920,28 @@ class IdrAgraTools():
         # update project record
         # see https://gis.stackexchange.com/questions/357344/trying-to-repair-layer-paths-on-opening-of-a-qgis-project-from-geopackage
         def path_processor(path):
-            # Replacing GPKG datasources if project is stored in GPKG
-            simDict = eval(proj.readEntry('IdrAgraTools', 'simsettings')[0])
-            oldPath = simDict['DBFILE']
-            oldFileName = os.path.basename(oldPath)
-            if dbpath:
-                fileName = os.path.basename(dbpath)
-                if re.search(oldFileName, path, flags=re.IGNORECASE):
-                    if not re.search(fileName, path, flags=re.IGNORECASE):
-                        QgsMessageLog.logMessage('Replace Layer Source: %s' % path, 'GPKG', Qgis.Info)
-                        path = re.sub(oldFileName, fileName, path, flags=re.IGNORECASE)
-                        QgsMessageLog.logMessage('with: %s' % path, 'GPKG', Qgis.Info)
-
+            # Replacing GPKG datasources if project is stored in GPKG.
+            # WARNING: this runs as a callback invoked from the C++ side while the
+            # project is being read. Any exception escaping from here crashes QGIS
+            # with an access violation instead of a readable Python error, so the
+            # whole body is protected and always returns a valid path.
+            try:
+                if proj is None:
+                    return path
+                simDict = self.readSimSettingsFromProject(proj)
+                oldPath = simDict.get('DBFILE', '')
+                if not oldPath:
+                    return path
+                oldFileName = os.path.basename(oldPath)
+                if dbpath and oldFileName:
+                    fileName = os.path.basename(dbpath)
+                    if re.search(oldFileName, path, flags=re.IGNORECASE):
+                        if not re.search(fileName, path, flags=re.IGNORECASE):
+                            QgsMessageLog.logMessage('Replace Layer Source: %s' % path, 'GPKG', Qgis.Info)
+                            path = re.sub(oldFileName, fileName, path, flags=re.IGNORECASE)
+                            QgsMessageLog.logMessage('with: %s' % path, 'GPKG', Qgis.Info)
+            except Exception as e:
+                QgsMessageLog.logMessage('path_processor skipped: %s' % str(e), 'GPKG', Qgis.Warning)
             return path
 
         idProc = QgsPathResolver.setPathPreprocessor(path_processor)
@@ -916,7 +951,7 @@ class IdrAgraTools():
         proj.read(uri)
 
         # load parameters without removing defaults if exist
-        tempSimDic = eval(proj.readEntry('IdrAgraTools', 'simsettings')[0])
+        tempSimDic = self.readSimSettingsFromProject(proj)
         for k,v in tempSimDic.items():
             self.SIMDIC[k]=v
 
@@ -1224,6 +1259,12 @@ class IdrAgraTools():
                              fromLay=res['lay'], toLay=wsLay, fieldDict=res['fieldDict'], assignDate=res['assignDate'],
                              saveEdit=res['saveEdit'],
                              progress=progress)
+
+    def importSatelliteCuts(self):
+        """Open the algorithm that imports the {year}_alfalfa_cuts.csv files
+        produced by the external "cuts_recognizer" script."""
+        processing.execAlgorithmDialog('idragrasatcuts:IdragraImportSatelliteCuts',
+                                       {'DB_FILENAME': self.SIMDIC['DBFILE']})
 
     def importLandUseMap(self):
         wsLay = self.getVectorLayerByName('idr_usemap')
@@ -1691,6 +1732,8 @@ class IdrAgraTools():
             self.SIMDIC['SOILUSEVARFLAG'] = res['useyearlymaps']
             ### set simulation options
             self.SIMDIC['RANDWIND'] = res['randWind']
+            ### use satellite-detected cuts instead of the GDD calendar (where available)
+            self.SIMDIC['USESATCUTS'] = res['useSatCuts']
             ### set simulation period
             self.SIMDIC['STARTYEAR'] = res['from']
             self.SIMDIC['ENDYEAR'] = res['to']
@@ -1997,7 +2040,7 @@ class IdrAgraTools():
         # print execPath,arg1,arg2
         if progress: progress.setText('%s' % (execPath))
 
-        s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+        s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
         # C:/Program Files/MATLAB/R2020b/runtime/win64
         MCRpath = s.value('MCRpath', '')
         # C:/MinGW/bin
@@ -2608,7 +2651,7 @@ class IdrAgraTools():
 
         # calculate irrigation timeserie from district and upload to stp_irr
         tempFile = QgsProcessingUtils.generateTempFilename('aggrOutput.gpkg')
-        algResults = processing.run("idragratools:IdragraImportIrrUnitsResults",
+        algResults = processing.run("idragrasatcuts:IdragraImportIrrUnitsResults",
                                     {'IDRAGRA_FILE':idragraFile,'AGGR_VAR':varIndex,
                                      'VOLUME':False,
                                      'DB_FILENAME':self.DBM.DBName},
@@ -2627,7 +2670,7 @@ class IdrAgraTools():
         # 'AGGR_FUN': 2 == mean [OK], 'AGGR_FUN': 1 == sum
         # calculate irrigation timeserie from district and upload to stp_irr
         tempFile = QgsProcessingUtils.generateTempFilename('aggrOutput.gpkg')
-        algResults = processing.run("idragratools:IdragraStatserie",
+        algResults = processing.run("idragrasatcuts:IdragraStatserie",
                        {'IDRAGRA_FILE': idragraFile,
                         'AGGR_LAY': gpkg_layer,
                         'AGGR_FLD': 'id','AGGR_VAR': varIndex, 'AGGR_FUN': 2,
@@ -3379,7 +3422,7 @@ class IdrAgraTools():
                 #domain_lay = self.getVectorLayerByName('idr_domainmap') # use db domain
                 domain_lay = os.path.join(self.SIMDIC['OUTPUTPATH'], 'geodata','domain.gpkg') # use domain in simulation
                 # TODO: check if input files exist
-                self.data = processing.run("idragratools:IdragraResultMaps",
+                self.data = processing.run("idragrasatcuts:IdragraResultMaps",
                                            {'IDRAGRA_FILE': idragraFile,
                                             'DOMAIN_LAY': domain_lay,
                                             'RES_VAR': res['selVarIdx'],
@@ -3433,7 +3476,7 @@ class IdrAgraTools():
             def processOutput(progress):
                 idragraFile = os.path.join(self.SIMDIC['OUTPUTPATH'],'idragra_parameters.txt')
 
-                self.data = processing.run("idragratools:IdragraGroupStats",
+                self.data = processing.run("idragrasatcuts:IdragraGroupStats",
                                {'IDRAGRA_FILE': idragraFile,
                                 'AGGR_LAY': res['selGroupLay'],'MERGE': res['selMerge'],
                                 'AGGR_FLD': res['selGroupField'],
@@ -3466,8 +3509,8 @@ class IdrAgraTools():
         proj = QgsProject.instance()
         dbpath = ''
         try:
-            #dbpath = proj.readEntry('IdrAgraTools', 'dbname')[0]
-            tempDic = eval(proj.readEntry('IdrAgraTools', 'simsettings')[0])
+            #dbpath = proj.readEntry('IdrAgraToolsSatCuts', 'dbname')[0]
+            tempDic = self.readSimSettingsFromProject(proj)
             usedKeys = list(self.SIMDIC.keys())
             for k,v in tempDic.items():
                 if k in usedKeys: # to prevent bugs
@@ -3715,7 +3758,7 @@ class IdrAgraTools():
         # from processing import execAlgorithmDialog
         #
         # params = {}  # A dictionary to load some default value in the dialog
-        # execAlgorithmDialog('idragratools:IdragraGetFromDtm', params)
+        # execAlgorithmDialog('idragrasatcuts:IdragraGetFromDtm', params)
         from .forms.import_raster_dialog import ImportRasterDialog
         dlg = ImportRasterDialog(self.iface)
         dlg.show()
@@ -3770,7 +3813,7 @@ class IdrAgraTools():
         print(res)
 
     def createImageMap(self):
-        from tools.layout_to_image import layoutToImage
+        from .tools.layout_to_image import layoutToImage
 
         layerNames = ['idr_weather_stations','idr_distrmap','idr_soilmap']
         layerList = []
@@ -3792,7 +3835,7 @@ class IdrAgraTools():
     def generateReport(self,repIndex, progress=None):
         # run algorithm
         self.HTMLFILE = None
-        algResults = processing.run("idragratools:IdragraReportOverview",
+        algResults = processing.run("idragrasatcuts:IdragraReportOverview",
                        {'SIM_FOLDER': self.SIMDIC['OUTPUTPATH'], 'OUTPUT': 'TEMPORARY_OUTPUT',
                         'REPORT_FORMAT':repIndex},
                                          context=None, feedback=progress, is_child_algorithm=False)

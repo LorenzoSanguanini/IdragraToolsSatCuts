@@ -41,7 +41,7 @@ import os
 from ..tools.delete_raster_from_DB import deleteRasterFromDB
 from ..tools.import_raster_in_db import importRasterInDB
 from ..tools.array_table_model import ArrayTableModel
-from forms.import_raster_dialog import ImportRasterDialog
+from ..forms.import_raster_dialog import ImportRasterDialog
 
 
 class ManageRastersDialog(QMainWindow):

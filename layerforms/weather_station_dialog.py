@@ -36,11 +36,11 @@ from PyQt5.QtWidgets import *
 from qgis.core import *
 
 
-from IdragraTools.layerforms.utils import *
+from IdragraToolsSatCuts.layerforms.utils import *
 
-from IdragraTools.data_manager.chart_widget import ChartWidget
+from IdragraToolsSatCuts.data_manager.chart_widget import ChartWidget
 
-from tools.show_message import showCriticalMessageBox
+from ..tools.show_message import showCriticalMessageBox
 
 
 def formOpen(dialog,layerid,featureid):
@@ -70,8 +70,8 @@ def formOpen(dialog,layerid,featureid):
 
 	res = {}
 	if wsid not in ['','Autogenerate']:
-		res = qgis.utils.plugins['IdragraTools'].getData(
-			list(qgis.utils.plugins['IdragraTools'].METEONAME.keys()),
+		res = qgis.utils.plugins['IdragraToolsSatCuts'].getData(
+			list(qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME.keys()),
 			int(wsid))
 	else:
 		return
@@ -82,7 +82,7 @@ def formOpen(dialog,layerid,featureid):
 	# Row count
 	table.setRowCount(len(res['varName']))
 
-	varList = list(qgis.utils.plugins['IdragraTools'].STATS.keys())
+	varList = list(qgis.utils.plugins['IdragraToolsSatCuts'].STATS.keys())
 	varList.remove('varName')
 	# Column count
 	table.setColumnCount(len(varList))
@@ -96,12 +96,12 @@ def formOpen(dialog,layerid,featureid):
 
 			table.setItem(r, c, QTableWidgetItem(str(val)))
 
-	table.setHorizontalHeaderLabels(list(qgis.utils.plugins['IdragraTools'].STATS.values())[1:])
+	table.setHorizontalHeaderLabels(list(qgis.utils.plugins['IdragraToolsSatCuts'].STATS.values())[1:])
 	table.setVerticalHeaderLabels(res['varName'])
 	table.horizontalHeader().setStretchLastSection(True)
 	table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-	msg = qgis.utils.plugins['IdragraTools'].checkData(res)
+	msg = qgis.utils.plugins['IdragraToolsSatCuts'].checkData(res)
 	myDialog.findChild(QTextBrowser,'MSG_TE').setText(msg)
 
 	PLOT_METEO_VARS_BTN = myDialog.findChild(QPushButton,'PLOT_METEO_VARS_BTN')
@@ -113,8 +113,8 @@ def formOpen(dialog,layerid,featureid):
 	global PLOT_HEATMAP_CB
 	PLOT_HEATMAP_CB = myDialog.findChild(QComboBox, 'PLOT_HEATMAP_CB')
 	# add items
-	inv_map = {qgis.utils.plugins['IdragraTools'].tr('Heat map from...'):'no_sel'}
-	for k, v in qgis.utils.plugins['IdragraTools'].METEONAME.items():
+	inv_map = {qgis.utils.plugins['IdragraToolsSatCuts'].tr('Heat map from...'):'no_sel'}
+	for k, v in qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME.items():
 		inv_map[v]=k
 
 	updateComboItems(PLOT_HEATMAP_CB,inv_map)
@@ -127,8 +127,8 @@ def formOpen(dialog,layerid,featureid):
 	global PLOT_PHENO_VARS_CB
 	PLOT_PHENO_VARS_CB = myDialog.findChild(QComboBox, 'PLOT_PHENO_VARS_CB')
 	# add items
-	inv_map = {qgis.utils.plugins['IdragraTools'].tr('Plot pheno vars...'): 'no_sel'}
-	for k, v in qgis.utils.plugins['IdragraTools'].PHENOVARS.items():
+	inv_map = {qgis.utils.plugins['IdragraToolsSatCuts'].tr('Plot pheno vars...'): 'no_sel'}
+	for k, v in qgis.utils.plugins['IdragraToolsSatCuts'].PHENOVARS.items():
 		inv_map[v] = k
 
 	updateComboItems(PLOT_PHENO_VARS_CB, inv_map)
@@ -139,7 +139,7 @@ def formOpen(dialog,layerid,featureid):
 											int(x)))
 
 	# connect start edit button to setEditMode to get edit tool pressed
-	#qgis.utils.plugins['IdragraTools'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
+	#qgis.utils.plugins['IdragraToolsSatCuts'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
 	try:
 		parentForm = myDialog.window()
 		act = parentForm.findChild(QAction,'mActionToggleEditing')
@@ -148,7 +148,7 @@ def formOpen(dialog,layerid,featureid):
 		print('error: %s'%str(e))
 
 def calcLat():
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	latTE = myDialog.findChild(QLineEdit,'lat')
 	fromCRS = QgsProject.instance().crs()
 	toCRS = QgsCoordinateReferenceSystem('EPSG:4326')
@@ -164,9 +164,9 @@ def calcLat():
 
 def showEditDialog(wsId,name):
 	# make a dialog
-	from IdragraTools.layerforms.weather_manager_dialog import WeatherManagerDialog
-	tr = qgis.utils.plugins['IdragraTools'].tr
-	dlg = WeatherManagerDialog(myDialog, qgis.utils.plugins['IdragraTools'].DBM.DBName,wsId,tr('Data of %s'%name))
+	from IdragraToolsSatCuts.layerforms.weather_manager_dialog import WeatherManagerDialog
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
+	dlg = WeatherManagerDialog(myDialog, qgis.utils.plugins['IdragraToolsSatCuts'].DBM.DBName,wsId,tr('Data of %s'%name))
 	dlg.resize(0.9*myDialog.geometry().width(),myDialog.geometry().height())
 	# make the model with data
 	dlg.show()
@@ -174,15 +174,15 @@ def showEditDialog(wsId,name):
 
 def plotMeteoVars(wsId,name):
 	# make a dialog
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	cw = ChartWidget(myDialog, '', False, False)
 
 	cw.setAxis(pos=311 , secondAxis=True, label = ['Temp','Prec'])
 	# add timeseries
 	plotList =  [
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_ptot'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'ws_ptot','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_tmax'],'plot':'True','color':'#A8423F','style': '-','axes':'y2','table':'ws_tmax','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_tmin'],'plot':'True','color':'#4198AF','style': '-','axes':'y2','table':'ws_tmin','id':wsId}
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_ptot'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'ws_ptot','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_tmax'],'plot':'True','color':'#A8423F','style': '-','axes':'y2','table':'ws_tmax','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_tmin'],'plot':'True','color':'#4198AF','style': '-','axes':'y2','table':'ws_tmin','id':wsId}
 						]
 
 	y1Title = []
@@ -192,7 +192,7 @@ def plotMeteoVars(wsId,name):
 		if p['table']=='ws_ptot':
 			shadow = p['color']+'29'
 		# get data
-		dateTimeList, values = qgis.utils.plugins['IdragraTools'].DBM.getTimeSeries(p['table'],p['id'])
+		dateTimeList, values = qgis.utils.plugins['IdragraToolsSatCuts'].DBM.getTimeSeries(p['table'],p['id'])
 		print('ws:',type(dateTimeList[0]))
 		#dateTimeList = [np.datetime64(dt) for dt in dateTimeList]
 		print('ws:', type(dateTimeList[0]))
@@ -211,8 +211,8 @@ def plotMeteoVars(wsId,name):
 	cw.setAxis(pos=312 , secondAxis=False,label = ['Humidity'])
 	# add timeseries
 	plotList =  [
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_umax'],'plot':'True','color':'#86A44A','style': '-','axes':'y','table':'ws_umax','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_umin'],'plot':'True','color':'#6E548D','style': '-','axes':'y','table':'ws_umin','id':wsId}
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_umax'],'plot':'True','color':'#86A44A','style': '-','axes':'y','table':'ws_umax','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_umin'],'plot':'True','color':'#6E548D','style': '-','axes':'y','table':'ws_umin','id':wsId}
 					]
 
 	y1Title = []
@@ -222,7 +222,7 @@ def plotMeteoVars(wsId,name):
 		if p['table']=='ws_ptot':
 			shadow = p['color']+'29'
 		# get data
-		dateTimeList, values = qgis.utils.plugins['IdragraTools'].DBM.getTimeSeries(p['table'],p['id'])
+		dateTimeList, values = qgis.utils.plugins['IdragraToolsSatCuts'].DBM.getTimeSeries(p['table'],p['id'])
 		cw.addTimeSerie(dateTimeList,values,lineType='-',color=p['color'],name = p['name'],yaxis = p['axes'],shadow= shadow)
 		if p['axes']=='y': y1Title.append(p['name'])
 		if p['axes']=='y2': y2Title.append(p['name'])
@@ -237,8 +237,8 @@ def plotMeteoVars(wsId,name):
 	cw.setAxis(pos=313 , secondAxis=True, label = ['Wind','Radiation'])
 	# add timeseries
 	plotList =  [
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_vmed'],'plot':'True','color':'#DA8137','style': '-','axes':'y','table':'ws_vmed','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].METEONAME['ws_rgcorr'],'plot':'True','color':'#8EA5CB','style': '-','axes':'y2','table':'ws_rgcorr','id':wsId}
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_vmed'],'plot':'True','color':'#DA8137','style': '-','axes':'y','table':'ws_vmed','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME['ws_rgcorr'],'plot':'True','color':'#8EA5CB','style': '-','axes':'y2','table':'ws_rgcorr','id':wsId}
 					]
 
 	y1Title = []
@@ -248,7 +248,7 @@ def plotMeteoVars(wsId,name):
 		if p['table']=='ws_ptot':
 			shadow = p['color']+'29'
 		# get data
-		dateTimeList, values = qgis.utils.plugins['IdragraTools'].DBM.getTimeSeries(p['table'],p['id'])
+		dateTimeList, values = qgis.utils.plugins['IdragraToolsSatCuts'].DBM.getTimeSeries(p['table'],p['id'])
 		cw.addTimeSerie(dateTimeList,values,lineType='-',color=p['color'],name = p['name'],yaxis = p['axes'],shadow= shadow)
 		if p['axes']=='y': y1Title.append(p['name'])
 		if p['axes']=='y2': y2Title.append(p['name'])
@@ -265,8 +265,8 @@ def plotMeteoVars(wsId,name):
 def plotSingleMeteoDistro(wsId,name,varIdx):
 	PLOT_HEATMAP_CB.setCurrentIndex(0)
 	# make a dialog
-	tr = qgis.utils.plugins['IdragraTools'].tr
-	dict = qgis.utils.plugins['IdragraTools'].METEONAME
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
+	dict = qgis.utils.plugins['IdragraToolsSatCuts'].METEONAME
 	varIdx = varIdx-1 # delete first
 	if varIdx<0:
 		# no var case
@@ -298,7 +298,7 @@ def plotSingleMeteoDistro(wsId,name,varIdx):
 	dlg.show()
 
 def plotPheno(wsId,varIdx):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	PLOT_PHENO_VARS_CB.setCurrentIndex(0)
 	# make a dialog
 	varIdx = varIdx-1 # delete first
@@ -307,10 +307,10 @@ def plotPheno(wsId,varIdx):
 		return
 
 	import matplotlib.pyplot as plt
-	phenovars = qgis.utils.plugins['IdragraTools'].PHENOVARS
+	phenovars = qgis.utils.plugins['IdragraToolsSatCuts'].PHENOVARS
 	# get var id to plot, is the same name of the output file of cropcoef
 	varId = list(phenovars.keys())[varIdx]
-	phenos,msg = qgis.utils.plugins['IdragraTools'].readCropCoefReasults(varId,wsId)
+	phenos,msg = qgis.utils.plugins['IdragraToolsSatCuts'].readCropCoefReasults(varId,wsId)
 	if phenos is None:
 		showCriticalMessageBox(tr('It\'s like there is no data to plot'),tr('Please, check if the file exists and it is correctly formatted'),msg)
 		return
@@ -337,7 +337,7 @@ def plotPheno(wsId,varIdx):
 def createArray(wsId,tableName = 'ws_ptot'):
 
 	# create the 2d matrix
-	dateTimeList, values = qgis.utils.plugins['IdragraTools'].DBM.getTimeSeries(tableName, wsId)
+	dateTimeList, values = qgis.utils.plugins['IdragraToolsSatCuts'].DBM.getTimeSeries(tableName, wsId)
 	if len(dateTimeList)==0:
 		return None,None, None
 
@@ -377,10 +377,10 @@ def setEditMode(mode):
 			print('error: %s'%str(e))
 
 def getElevation():
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	# get raster layer
 	try:
-		rasteName = qgis.utils.plugins['IdragraTools'].SIMDIC['RASTER']['elevation']
+		rasteName = qgis.utils.plugins['IdragraToolsSatCuts'].SIMDIC['RASTER']['elevation']
 		rasterLay = QgsRasterLayer(rasteName,'dtm')
 	except Exception as e:
 		rasterLay = None

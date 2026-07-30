@@ -35,8 +35,8 @@ from datetime import datetime,date,timedelta
 import pandas as pd
 
 # credits: https://stackoverflow.com/questions/6518811/interpolate-nan-values-in-a-numpy-array
-from tools.my_progress import MyProgress
-from tools.parse_par_file import parseParFile
+from ..tools.my_progress import MyProgress
+from ..tools.parse_par_file import parseParFile
 
 
 def nan_helper(y):

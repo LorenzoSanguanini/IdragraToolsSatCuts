@@ -314,7 +314,16 @@ class SQLiteDriver(QObject):
 																lai text,
 																hc text,
 																sr text,
-																adv_opts text
+																adv_opts text,
+																irr_halt_days integer
+																);
+
+								DROP TABLE IF EXISTS  idr_forced_cuts;
+								CREATE TABLE idr_forced_cuts (
+																fid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+																field_id integer NOT NULL,
+																year integer NOT NULL,
+																cut_date text NOT NULL
 																);
 					
 								DROP TABLE IF EXISTS  idr_irrmet_types;

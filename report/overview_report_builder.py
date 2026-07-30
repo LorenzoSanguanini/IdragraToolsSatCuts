@@ -19,7 +19,7 @@ from osgeo import ogr
 from datetime import datetime,timedelta
 import math
 # import as module
-from report.report_builder import ReportBuilder
+from ..report.report_builder import ReportBuilder
 
 class OverviewReportBuilder(ReportBuilder):
 

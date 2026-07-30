@@ -7,10 +7,10 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=Idragra Tools
+name=Idragra Tools SatCuts
 qgisMinimumVersion=3.28
-description= A QGIS plugin to manage input e output to/from IdrAgra water districts model
-version=0.4
+description= IdragraTools extended with satellite-detected alfalfa cuts (forced cuts + irrigation halt around cuts)
+version=0.4.2-satcuts
 author=Enrico A. Chiaradia
 email=enrico.chiaradia@unimi.it
 
@@ -30,7 +30,7 @@ tags=water management, irrigation, water balance, idragra
 
 homepage=https://github.com/happ/idragratools/wiki
 category=Analysis
-icon=idragratools_logo.png
+icon=idragra_satcuts_logo.png
 # experimental flag
 experimental=False
 

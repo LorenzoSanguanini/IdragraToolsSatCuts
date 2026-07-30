@@ -80,8 +80,8 @@ from datetime import datetime
 import os
 
 #from tools.add_features_from_csv import addFeaturesFromCSV
-from tools.parse_par_file import parseParFile
-from tools.sqlite_driver import SQLiteDriver
+from ..tools.parse_par_file import parseParFile
+from ..tools.sqlite_driver import SQLiteDriver
 
 
 class IdragraImportFromExistingDB(QgsProcessingAlgorithm):
@@ -181,7 +181,7 @@ class IdragraImportFromExistingDB(QgsProcessingAlgorithm):
 		Here we define the inputs and output of the algorithm, along
 		with some other properties.
 		"""
-		self.ASSETSDICT = qgis.utils.plugins['IdragraTools'].LYRNAME
+		self.ASSETSDICT = qgis.utils.plugins['IdragraToolsSatCuts'].LYRNAME
 		#self.ASSETSDICT['elevation'] =self.tr('Elevation')
 		#self.ASSETSDICT['watertable'] = self.tr('Water table')
 

@@ -303,7 +303,7 @@ class IdragraRasterizeTimeMap(QgsProcessingAlgorithm):
 											context=None, feedback=feedback, is_child_algorithm=False)
 
 			# export to ascii
-			processing.run("idragratools:IdragraSaveAscii",
+			processing.run("idragrasatcuts:IdragraSaveAscii",
 							{'INPUT': algResults['OUTPUT'], 'DIGITS': digits,
 							 'OUTPUT': destFile},
 							context=None, feedback=feedback, is_child_algorithm=False)

@@ -245,7 +245,7 @@ class IdragraRasterizeDomain(QgsProcessingAlgorithm):
 			self.FEEDBACK.error(self.tr('Unable to resolve the formula %s')%formula,True)
 
 		# tranform to ascii file
-		algresult = processing.run("idragratools:IdragraSaveAscii",
+		algresult = processing.run("idragrasatcuts:IdragraSaveAscii",
 						   {'INPUT': domainMap, 'DIGITS': 0,
 							'OUTPUT': destFile},
 						   context=context, feedback=feedback, is_child_algorithm=True)

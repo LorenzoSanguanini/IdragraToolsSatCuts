@@ -30,8 +30,8 @@ __revision__ = '$Format:%H$'
 
 from PyQt5.QtWidgets import *
 
-from IdragraTools.layerforms.utils import *
-from IdragraTools.tools.array_table_model import ArrayTableModel
+from IdragraToolsSatCuts.layerforms.utils import *
+from IdragraToolsSatCuts.tools.array_table_model import ArrayTableModel
 
 def formOpen(dialog,layerid,featureid):
 	global myDialog
@@ -60,7 +60,7 @@ def formOpen(dialog,layerid,featureid):
 
 	
 def showEditDialog():
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	# extract data
 	t = parseString(irrTimeLE.text(),' ',toSpecialInt)
 	if len(t) ==0: t = list(range(1,25))
@@ -72,7 +72,7 @@ def showEditDialog():
 	data = list(map(list, data))
 	header = [tr('Hour'),tr('Fraction')]
 	# make a dialog
-	from IdragraTools.layerforms.table_dialog import TableDialog
+	from IdragraToolsSatCuts.layerforms.table_dialog import TableDialog
 	dlg = TableDialog(parent=myDialog,title = 'View/edit table')
 	# make the model with data
 	global aModel

@@ -33,7 +33,7 @@ from datetime import datetime
 
 from qgis._core import QgsProject, QgsVectorLayer, QgsExpression, QgsFeatureRequest, QgsFeature
 
-from tools.my_progress import MyProgress
+from ..tools.my_progress import MyProgress
 
 
 def previewImportFromCSV(filename, dbname, tablename, timeFldIdx, valueFldIdx, sensorId, skip,timeFormat,column_sep, feedback,tr=None):

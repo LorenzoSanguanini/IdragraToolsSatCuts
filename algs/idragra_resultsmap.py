@@ -173,7 +173,7 @@ class IdragraResultsMap(QgsProcessingAlgorithm):
 		Here we define the inputs and output of the algorithm, along
 		with some other properties.
 		"""
-		self.STEPNAME = qgis.utils.plugins['IdragraTools'].STEPNAME
+		self.STEPNAME = qgis.utils.plugins['IdragraToolsSatCuts'].STEPNAME
 
 		#### PARAMETERS ####
 

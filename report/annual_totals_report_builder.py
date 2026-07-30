@@ -21,7 +21,7 @@ from matplotlib.transforms import Bbox
 from datetime import datetime,timedelta
 
 # import as module
-from report.overview_report_builder import OverviewReportBuilder
+from ..report.overview_report_builder import OverviewReportBuilder
 
 class AnnualTotalsReportBuilder(OverviewReportBuilder):
 

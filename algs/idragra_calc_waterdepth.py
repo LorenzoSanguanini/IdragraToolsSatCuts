@@ -344,7 +344,7 @@ class IdragraCalcWaterDepth(QgsProcessingAlgorithm):
 		feedback.pushInfo(self.tr('Saving output ...'))
 		feedback.setProgress(90)
 
-		processing.run("idragratools:IdragraSaveAscii",
+		processing.run("idragrasatcuts:IdragraSaveAscii",
 					   {'INPUT': wtdepth, 'DIGITS': 6,
 						'OUTPUT': outputFile},
 					   context=None, feedback=feedback, is_child_algorithm=False)

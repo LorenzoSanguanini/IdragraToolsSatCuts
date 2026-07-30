@@ -33,7 +33,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from qgis.gui import *
 
-from IdragraTools.layerforms.utils import *
+from IdragraToolsSatCuts.layerforms.utils import *
 
 def formOpen(dialog,layerid,featureid):
 	global myDialog
@@ -48,9 +48,9 @@ def formOpen(dialog,layerid,featureid):
 									#~ 'idr_nodes':self.tr('Nodes'),'idr_links':self.tr('Links'),
 									#~ 'idr_crop_fields':self.tr('Crop fields')
 		
-	tr = qgis.utils.plugins['IdragraTools'].tr
-	getIdNameDict = qgis.utils.plugins['IdragraTools'].getIdNameDict
-	getIdNameDictXY = qgis.utils.plugins['IdragraTools'].getIdNameDictXY
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
+	getIdNameDict = qgis.utils.plugins['IdragraToolsSatCuts'].getIdNameDict
+	getIdNameDictXY = qgis.utils.plugins['IdragraToolsSatCuts'].getIdNameDictXY
 	
 	# prepare a list of widget to enable/disable
 	global objToBeEnabledList
@@ -79,7 +79,7 @@ def formOpen(dialog,layerid,featureid):
 	setEditMode(layer.isEditable())
 		
 	# connect start edit button to setEditMode to get edit tool pressed	
-	#qgis.utils.plugins['IdragraTools'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
+	#qgis.utils.plugins['IdragraToolsSatCuts'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
 	try:
 		parentForm = myDialog.window() 
 		act = parentForm.findChild(QAction,'mActionToggleEditing')

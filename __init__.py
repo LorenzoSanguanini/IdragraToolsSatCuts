@@ -34,10 +34,10 @@ import inspect
 
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name
-	cmd_folder = os.path.split(inspect.getfile(inspect.currentframe()))[0]
-
-	if cmd_folder not in sys.path:
-		sys.path.insert(0, cmd_folder)
+	# NOTE (SatCuts): the plugin folder is NOT inserted in sys.path any more.
+	# All internal imports are relative, so nothing is needed here; injecting the
+	# folder would make the generic package names "tools"/"forms" resolve to this
+	# plugin also for the original IdragraTools, breaking it when both are installed.
 	
 	from .idragratools_plugin import IdrAgraTools
 	return IdrAgraTools(iface)

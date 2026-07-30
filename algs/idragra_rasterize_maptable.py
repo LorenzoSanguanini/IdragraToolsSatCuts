@@ -296,7 +296,7 @@ class IdragraRasterizeMaptable(QgsProcessingAlgorithm):
 			# 									'OUTPUT':outPath},
 			# 				context=context, feedback=feedback, is_child_algorithm=True)
 			feedback.pushInfo(self.tr('Saving to file %s' % outPath))
-			processing.run("idragratools:IdragraSaveAscii",
+			processing.run("idragrasatcuts:IdragraSaveAscii",
 						   {'INPUT': self.algresult2['OUTPUT'], 'DIGITS': 6,
 							'OUTPUT': outPath},
 						   context=None, feedback=feedback, is_child_algorithm=False)

@@ -50,11 +50,11 @@ from datetime import datetime
 from matplotlib.sankey import Sankey
 
 if (matplotlib.__version__).startswith('3.1.'):
-	from data_manager.chart_tool_bar_3_1 import ChartToolBar
+	from ..data_manager.chart_tool_bar_3_1 import ChartToolBar
 elif (matplotlib.__version__).startswith('3.5.'):
-	from data_manager.chart_tool_bar_3_5 import ChartToolBar
+	from ..data_manager.chart_tool_bar_3_5 import ChartToolBar
 else:
-	from data_manager.chart_tool_bar_3_1 import ChartToolBar
+	from ..data_manager.chart_tool_bar_3_1 import ChartToolBar
 
 class ChartWidget(QWidget):
 	def __init__(self, parent=None, title = '', secondAxis = False,

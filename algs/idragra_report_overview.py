@@ -40,9 +40,9 @@ from qgis.core import (QgsProcessingAlgorithm,
 
 import os
 
-from report.annual_totals_report_builder import AnnualTotalsReportBuilder
-from report.irrunit_totals_report_builder import IrrunitTotalsReportBuilder
-from report.report_builder import ReportBuilder
+from ..report.annual_totals_report_builder import AnnualTotalsReportBuilder
+from ..report.irrunit_totals_report_builder import IrrunitTotalsReportBuilder
+from ..report.report_builder import ReportBuilder
 from ..report.overview_report_builder import OverviewReportBuilder
 
 
@@ -144,7 +144,7 @@ class IdragraReportOverview(QgsProcessingAlgorithm):
 		with some other properties.
 		"""
 		#### PARAMETERS ####
-		self.REPORT_TYPES =  qgis.utils.plugins['IdragraTools'].REPORT_TYPES
+		self.REPORT_TYPES =  qgis.utils.plugins['IdragraToolsSatCuts'].REPORT_TYPES
 
 		self.addParameter(QgsProcessingParameterFile(self.SIM_FOLDER, self.tr('IdrAgra simulation folder'),
 													  QgsProcessingParameterFile.Behavior.Folder,'','',False,''))

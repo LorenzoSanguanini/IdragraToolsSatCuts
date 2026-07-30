@@ -76,8 +76,8 @@ from datetime import datetime
 import os
 
 #from tools.add_features_from_csv import addFeaturesFromCSV
-from tools.parse_par_file import parseParFile
-from tools.sqlite_driver import SQLiteDriver
+from ..tools.parse_par_file import parseParFile
+from ..tools.sqlite_driver import SQLiteDriver
 
 
 class IdragraImportCropPar(QgsProcessingAlgorithm):

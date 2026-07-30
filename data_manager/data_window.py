@@ -33,7 +33,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMdiSubWindow, QTableView
 from qgis.PyQt import QtSql
 
-from data_manager.chart_widget import ChartWidget
+from ..data_manager.chart_widget import ChartWidget
 
 
 class DataWindow(QMdiSubWindow):

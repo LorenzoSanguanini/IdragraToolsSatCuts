@@ -621,6 +621,25 @@
        <item row="1" column="2">
         <widget class="QComboBox" name="cl_cn_CB"/>
        </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="irr_halt_days_LBL">
+         <property name="text">
+          <string>days of irrigation halt around each cut [irr_halt_days]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLineEdit" name="irr_halt_days">
+         <property name="toolTip">
+          <string>Number of days before and after each cut when irrigation is suppressed,
+so that the field is dry enough for the machinery.
+Applied by IdrAgra around EVERY cut of this crop, both when the dates come from
+the satellite and when they come from the growing-degree-day calendar.
+Exported to irr_halt_days.txt. Leave 0 to never stop irrigation for this crop.
+Typical value for alfalfa: 7 (a 15 day window centred on the cut).</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab">

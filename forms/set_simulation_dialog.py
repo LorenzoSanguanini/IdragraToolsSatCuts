@@ -138,6 +138,15 @@ class SetSimulationDialog(QMainWindow):
 		if simSettings['DEFAULT_IM'] in list(self.defImDict.keys()):
 			self.DEF_IM_CB.setCurrentText(self.defImDict[simSettings['DEFAULT_IM']])
 
+		# use satellite-detected cuts (added at runtime, no .ui change needed)
+		self.USESATCUTS_CB = QCheckBox(self.tr('Use satellite-detected cuts'), self)
+		self.USESATCUTS_CB.setToolTip(self.tr(
+			'If checked, alfalfa cuts imported from satellite data are imposed on the fields\n'
+			'where a valid series is available. Fields without a valid series keep using the\n'
+			'standard GDD-based calendar.'))
+		self.USESATCUTS_CB.setChecked(bool(simSettings.get('USESATCUTS', False)))
+		self.IRRIGATION_PG.layout().addRow(self.USESATCUTS_CB)
+
 		# sowing window
 		self.RANDWIND_SB.setValue(simSettings['RANDWIND'])
 
@@ -441,7 +450,10 @@ class SetSimulationDialog(QMainWindow):
 		defLU = list(self.defLuDict.keys())[self.DEF_LU_CB.currentIndex()]
 		defIM = list(self.defImDict.keys())[self.DEF_IM_CB.currentIndex()]
 
+		useSatCuts = self.USESATCUTS_CB.isChecked()
+
 		return {'outfolder':outfolder,'simMode':simMode,'randWind':randWind,
+				'useSatCuts': useSatCuts,
 				'defLU': defLU, 'defIM':defIM,
 				'useyearlymaps':useYearlyMaps, 'from':fromYear, 'to':toYear,
 				'vectorMode':vector_mode,'extent':dtmExtent, 'crs':crs, 'cellsize':cellsize,

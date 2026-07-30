@@ -77,7 +77,7 @@ from datetime import datetime,timedelta
 
 import os
 
-from algs.date_time_widget import DateTimeWidget
+from ..algs.date_time_widget import DateTimeWidget
 from ..tools.utils import isLeap
 
 
@@ -187,12 +187,12 @@ class IdragraGroupStats(QgsProcessingAlgorithm):
 		Here we define the inputs and output of the algorithm, along
 		with some other properties.
 		"""
-		self.STEPNAME = qgis.utils.plugins['IdragraTools'].STEPNAME
-		self.GROUPBY =  qgis.utils.plugins['IdragraTools'].GROUPBY
+		self.STEPNAME = qgis.utils.plugins['IdragraToolsSatCuts'].STEPNAME
+		self.GROUPBY =  qgis.utils.plugins['IdragraToolsSatCuts'].GROUPBY
 
-		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraTools'].AGGRFUNCTIONS
+		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraToolsSatCuts'].AGGRFUNCTIONS
 
-		self.TIMESTEP = qgis.utils.plugins['IdragraTools'].TIMESTEP
+		self.TIMESTEP = qgis.utils.plugins['IdragraToolsSatCuts'].TIMESTEP
 
 		#### PARAMETERS ####
 

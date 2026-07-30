@@ -76,8 +76,8 @@ from datetime import datetime
 import os
 
 #from tools.add_features_from_csv import addFeaturesFromCSV
-from tools.parse_par_file import parseParFile
-from tools.sqlite_driver import SQLiteDriver
+from ..tools.parse_par_file import parseParFile
+from ..tools.sqlite_driver import SQLiteDriver
 
 
 class IdragraCreateDB(QgsProcessingAlgorithm):
@@ -222,6 +222,7 @@ class IdragraCreateDB(QgsProcessingAlgorithm):
 			cropDict = parseParFile(filename=os.path.join(path2crop, f), parSep='=', colSep=' ', feedback=self.FEEDBACK, tr=self.tr)
 			cropValues = list(cropDict.values())
 			cropValues += [''] # add option pars
+			cropValues += ['7'] # irr_halt_days: default days of irrigation halt around each cut
 			sql = "INSERT INTO idr_crop_types VALUES (null,'%s');" % ("','".join(cropValues))
 			msg = self.DBM.executeSQL(sql)
 

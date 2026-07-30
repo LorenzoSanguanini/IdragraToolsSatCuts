@@ -49,6 +49,7 @@ from .algs.idragra_raster_quality import IdragraRasterQuality
 from .algs.idragra_annual_stats import IdragraAnnualStats
 from .algs.idragra_raster_groupstats import IdragraRasterGroupStats
 from .algs.idragra_import_crop_par import IdragraImportCropPar
+from .algs.idragra_import_satellite_cuts import IdragraImportSatelliteCuts
 from .algs.idragra_bulk_import_timeserie import IdragraBulkImportTimeserie
 from .algs.idragra_statserie import IdragraStatserie
 from .algs.idragra_export_control_points_grid import IdragraExportControlPointsGrid
@@ -103,6 +104,7 @@ class IdrAgraToolsProvider(QgsProcessingProvider):
 						IdragraStatserie(),
 						IdragraBulkImportTimeserie(),
 						IdragraImportCropPar(),
+						IdragraImportSatelliteCuts(),
 						IdragraRasterGroupStats(),
 						IdragraAnnualStats(),
 						IdragraRasterQuality(),
@@ -139,7 +141,7 @@ class IdrAgraToolsProvider(QgsProcessingProvider):
 		string should be a unique, short, character only string, eg "qgis" or
 		"gdal". This string should not be localised.
 		"""
-		return 'idragratools'
+		return 'idragrasatcuts'
 
 	def name(self):
 		"""
@@ -148,7 +150,7 @@ class IdrAgraToolsProvider(QgsProcessingProvider):
 
 		This string should be short (e.g. "Lastools") and localised.
 		"""
-		return self.tr('IdrAgra Tools')
+		return self.tr('IdrAgra Tools SatCuts')
 
 	def longName(self):
 		"""
@@ -161,5 +163,5 @@ class IdrAgraToolsProvider(QgsProcessingProvider):
 
 	def icon(self):
 		self.plugin_dir = os.path.dirname(__file__)
-		icon = QIcon(os.path.join(self.plugin_dir, 'idragratools_provider.png'))
+		icon = QIcon(os.path.join(self.plugin_dir, 'idragra_satcuts_provider.png'))
 		return icon

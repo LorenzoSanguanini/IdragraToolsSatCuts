@@ -30,9 +30,9 @@ __revision__ = '$Format:%H$'
 
 from PyQt5.QtWidgets import QPushButton, QLineEdit, QDialog, QMainWindow, QLabel
 
-from data_manager.chart_widget import ChartWidget
+from ..data_manager.chart_widget import ChartWidget
 
-from tools.show_message import showInfoMessageBox,showCriticalMessageBox
+from ..tools.show_message import showInfoMessageBox,showCriticalMessageBox
 
 
 def formOpen(dialog,layerid,featureid):
@@ -87,7 +87,7 @@ def formOpen(dialog,layerid,featureid):
 
 	#setInfoLabel()
 	INFO_LBL = myDialog.findChild(QLabel, 'INFO_LBL')
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
 	# hide plot buttons if feature is
 	if not feature.geometry():
@@ -98,22 +98,22 @@ def formOpen(dialog,layerid,featureid):
 		PLOT_CROP_VARS.setHidden(True)
 		INFO_LBL.setHidden(True)
 	else:
-		r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
+		r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
 		INFO_LBL.setText(tr('Cell coordinates (row,column): %s,%s') % (r, c))
 
 def plotEvaWC(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
 	# get data
-	simdic = qgis.utils.plugins['IdragraTools'].SIMDIC
-	r,c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
-	df, msg =  qgis.utils.plugins['IdragraTools'].readControlPointsResults(r,c,None,['Giulian_day','theta1_mm'])
+	simdic = qgis.utils.plugins['IdragraToolsSatCuts'].SIMDIC
+	r,c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
+	df, msg =  qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r,c,None,['Giulian_day','theta1_mm'])
 
 	if df is None:
 		showCriticalMessageBox(tr('It\'s like there is no data to plot'),tr('Please, check if file exist'),msg)
 		return
 
-	pars, msgPars =  qgis.utils.plugins['IdragraTools'].readControlPointsParams(r, c, [],['ThetaI_fc','ThetaI_wp'])
+	pars, msgPars =  qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsParams(r, c, [],['ThetaI_fc','ThetaI_wp'])
 
 	cw = ChartWidget(myDialog, '', False, False)
 	cw.setAxis(pos=111, secondAxis=False, label=['main plot'])
@@ -138,13 +138,13 @@ def plotEvaWC(wsId,name):
 
 
 def plotTransWC(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
 	# get data
-	simdic = qgis.utils.plugins['IdragraTools'].SIMDIC
-	r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
-	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c, None, ['Giulian_day', 'pday','theta2_mm','thickness_II_m'])
-	pars, msgPars = qgis.utils.plugins['IdragraTools'].readControlPointsParams(r, c, [], ['ThetaII_fc', 'ThetaII_wp'])
+	simdic = qgis.utils.plugins['IdragraToolsSatCuts'].SIMDIC
+	r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
+	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c, None, ['Giulian_day', 'pday','theta2_mm','thickness_II_m'])
+	pars, msgPars = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsParams(r, c, [], ['ThetaII_fc', 'ThetaII_wp'])
 
 	if df is None:
 		showCriticalMessageBox(tr('It\'s like there is no data to plot'),tr('Please, check if file exists'),msg)
@@ -185,10 +185,10 @@ def plotTransWC(wsId,name):
 
 
 def plotEvaVars(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
-	r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
-	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
+	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 																		  None, ['Giulian_day', 'rain_mm','irrig_mm','theta1_mm','interception_mm',
 																				 'runoff_mm','eva_mm','perc1_mm'])
 
@@ -202,8 +202,8 @@ def plotEvaVars(wsId,name):
 
 	# add timeseries
 	plotList =  [
-						{'name':qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_rain_mm'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'rain_mm','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_irrig_mm'],'plot':'True','color':'#A8423F','style': '-','axes':'y','table':'irrig_mm','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_rain_mm'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'rain_mm','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_irrig_mm'],'plot':'True','color':'#A8423F','style': '-','axes':'y','table':'irrig_mm','id':wsId},
 						]
 
 	y1Title = []
@@ -229,15 +229,15 @@ def plotEvaVars(wsId,name):
 
 	# add timeseries
 	plotList = [
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_theta1_mm'], 'plot': 'True', 'color': '#4198AF',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_theta1_mm'], 'plot': 'True', 'color': '#4198AF',
 		 'style': '-', 'axes': 'y', 'table': 'theta1_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_interception_mm'], 'plot': 'True', 'color': '#86A44A',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_interception_mm'], 'plot': 'True', 'color': '#86A44A',
 		 'style': '-', 'axes': 'y', 'table': 'interception_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_runoff_mm'], 'plot': 'True', 'color': '#6E548D',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_runoff_mm'], 'plot': 'True', 'color': '#6E548D',
 		 'style': '-', 'axes': 'y', 'table': 'runoff_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_eva_mm'], 'plot': 'True', 'color': '#DA8137',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_eva_mm'], 'plot': 'True', 'color': '#DA8137',
 		 'style': '-', 'axes': 'y', 'table': 'eva_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_perc1_mm'], 'plot': 'True', 'color': '#8EA5CB',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_perc1_mm'], 'plot': 'True', 'color': '#8EA5CB',
 		 'style': '-', 'axes': 'y', 'table': 'perc1_mm', 'id': wsId}
 	]
 
@@ -266,16 +266,16 @@ def plotEvaVars(wsId,name):
 	dlg.show()
 
 def plotTransVars(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
-	r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
+	r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
 	# try:
-	# 	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	# 	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 	# 																		  None, ['Giulian_day', 'perc1_mm', 'capflux_mm',
 	# 																				 'theta2_mm', 'trasp_act_mm',
 	# 																				 'perc2_mm'])
 	# except:
-	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 																		  None,
 																		  ['Giulian_day', 'perc1_mm', 'capflux_mm',
 																		   'theta2_mm',  'trasp_act1_mm', 'trasp_act2_mm',
@@ -290,15 +290,15 @@ def plotTransVars(wsId,name):
 	df['trasp_act_mm']= df['trasp_act1_mm']+df['trasp_act2_mm']
 
 	# make a dialog
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	cw = ChartWidget(myDialog, '', False, False)
 	cw.setAxis(pos=211, secondAxis=False, label=['External vars'])
 
 	# add timeseries
 	plotList = [
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_perc1_mm'], 'plot': 'True', 'color': '#416FA6',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_perc1_mm'], 'plot': 'True', 'color': '#416FA6',
 		 'style': '-', 'axes': 'y', 'table': 'perc1_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_capflux_mm'], 'plot': 'True', 'color': '#A8423F',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_capflux_mm'], 'plot': 'True', 'color': '#A8423F',
 		 'style': '-', 'axes': 'y', 'table': 'capflux_mm', 'id': wsId},
 	]
 
@@ -326,11 +326,11 @@ def plotTransVars(wsId,name):
 
 	# add timeseries
 	plotList = [
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_theta2_mm'], 'plot': 'True', 'color': '#4198AF',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_theta2_mm'], 'plot': 'True', 'color': '#4198AF',
 		 'style': '-', 'axes': 'y', 'table': 'theta2_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_trasp_act_mm'], 'plot': 'True', 'color': '#86A44A',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_trasp_act_mm'], 'plot': 'True', 'color': '#86A44A',
 		 'style': '-', 'axes': 'y', 'table': 'trasp_act_mm', 'id': wsId},
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_perc2_mm'], 'plot': 'True', 'color': '#6E548D',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_perc2_mm'], 'plot': 'True', 'color': '#6E548D',
 		 'style': '-', 'axes': 'y', 'table': 'perc2_mm', 'id': wsId}
 	]
 
@@ -361,18 +361,18 @@ def plotTransVars(wsId,name):
 
 
 def plotIrrEvents(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
-	settings = qgis.utils.plugins['IdragraTools'].SIMDIC
+	settings = qgis.utils.plugins['IdragraToolsSatCuts'].SIMDIC
 
-	r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
+	r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
 	# try:
-	# 	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	# 	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 	# 																		  None, ['Giulian_day', 'perc1_mm', 'capflux_mm',
 	# 																				 'theta2_mm', 'trasp_act_mm',
 	# 																				 'perc2_mm'])
 	# except:
-	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 																		  None,
 																		  ['Giulian_day','rain_mm','pday','rawbig',
 																		   'rawinf','theta1_mm','theta_old_mm',
@@ -387,7 +387,7 @@ def plotIrrEvents(wsId,name):
 	df['theta_mm'] = df['theta1_mm'] + df['theta_old_mm']
 	# make a shift
 	#df['theta_mm']=df['theta_mm'].shift(1)
-	pars, msgPars = qgis.utils.plugins['IdragraTools'].readControlPointsParams(r, c, [],
+	pars, msgPars = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsParams(r, c, [],
 																			   ['ThetaI_fc', 'ThetaI_wp',
 																				'ThetaII_fc', 'ThetaII_wp'])
 
@@ -412,8 +412,8 @@ def plotIrrEvents(wsId,name):
 
 	# add timeseries
 	plotList =  [
-						{'name':qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_rain_mm'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'rain_mm','id':wsId},
-						{'name':qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_irrig_mm'],'plot':'True','color':'#A8423F','style': '-','axes':'y','table':'irrig_mm','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_rain_mm'],'plot':'True','color':'#416FA6','style': '-','axes':'y','table':'rain_mm','id':wsId},
+						{'name':qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_irrig_mm'],'plot':'True','color':'#A8423F','style': '-','axes':'y','table':'irrig_mm','id':wsId},
 						]
 
 	y1Title = []
@@ -484,23 +484,23 @@ def plotIrrEvents(wsId,name):
 
 
 def plotCropVars(wsId,name):
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 
-	r, c = qgis.utils.plugins['IdragraTools'].getRowCol(feature)
-	df, msg = qgis.utils.plugins['IdragraTools'].readControlPointsResults(r, c,
+	r, c = qgis.utils.plugins['IdragraToolsSatCuts'].getRowCol(feature)
+	df, msg = qgis.utils.plugins['IdragraToolsSatCuts'].readControlPointsResults(r, c,
 																		  None, ['Giulian_day', 'kcb', 'lai'])
 	if df is None:
 		showCriticalMessageBox(tr('It\'s like there is no data to plot'),tr('Please, check if file exist'),msg)
 		return
 
 	# make a dialog
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	cw = ChartWidget(myDialog, '', False, False)
 	cw.setAxis(pos=211, secondAxis=False, label=['External vars'])
 
 	# add timeseries
 	plotList = [
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_kcb'], 'plot': 'True', 'color': '#c87137ff',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_kcb'], 'plot': 'True', 'color': '#c87137ff',
 		 'style': '-', 'axes': 'y', 'table': 'kcb', 'id': wsId},
 	]
 
@@ -525,7 +525,7 @@ def plotCropVars(wsId,name):
 
 	# add timeseries
 	plotList = [
-		{'name': qgis.utils.plugins['IdragraTools'].CPVARNAME['cp_lai'], 'plot': 'True', 'color': '#71c837ff',
+		{'name': qgis.utils.plugins['IdragraToolsSatCuts'].CPVARNAME['cp_lai'], 'plot': 'True', 'color': '#71c837ff',
 		 'style': '-', 'axes': 'y', 'table': 'lai', 'id': wsId}
 	]
 

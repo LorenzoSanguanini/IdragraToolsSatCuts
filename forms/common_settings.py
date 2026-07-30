@@ -60,7 +60,7 @@ class CommonSettings(QDialog):
 		uic.loadUi(uiFilePath, self)
 
 		### set path to executable
-		s = QSettings('UNIMI-DISAA', 'IdrAgraTools')
+		s = QSettings('UNIMI-DISAA', 'IdrAgraToolsSatCuts')
 		path2Idragra = s.value('idragraPath', '')
 		path2CropCoeff = s.value('cropcoeffPath', '')
 		MCRpath = s.value('MCRpath', '')

@@ -35,7 +35,7 @@ from PyQt5.QtCore import QObject, QVariant
 from qgis import processing
 from qgis._core import QgsRasterLayer, QgsVectorLayer, QgsField, QgsProcessing
 
-from tools.write_pars_to_template import writeParsToTemplate
+from ..tools.write_pars_to_template import writeParsToTemplate
 
 
 class ExportGeodataVector(QObject):
@@ -76,7 +76,7 @@ class ExportGeodataVector(QObject):
             for wt_map in list(self.sim_dict['WATERTABLEMAP'].keys()):
                 wt_lay_list.append('GPKG:'+db_name +':'+wt_map)
 
-            self.algResults = processing.run("idragratools:IdragraCreateElevToField",
+            self.algResults = processing.run("idragrasatcuts:IdragraCreateElevToField",
                                 {'FIELD_LAY': db_name + '|layername=idr_domainmap',
                                 'ELEV_LAY': elev_name,
                                 'WT_ELEV_LAY': wt_lay_list,
@@ -100,7 +100,7 @@ class ExportGeodataVector(QObject):
                 fld_names=fld_names+' land_use_%s'%current_yr
 
         if len(lu_raster_list)>0:
-            self.algResults = processing.run("idragratools:IdragraCreateRasterToField",
+            self.algResults = processing.run("idragrasatcuts:IdragraCreateRasterToField",
                                              {'FIELD_LAY': self.algResults['OUT_LAY'],
                                               'RASTER_LIST': lu_raster_list,
                                               'FLD_NAME_LIST': fld_names,
@@ -117,7 +117,7 @@ class ExportGeodataVector(QObject):
                 fld_names = fld_names + ' irr_meth_%s' % current_yr
 
         if len(im_raster_list) > 0:
-            self.algResults = processing.run("idragratools:IdragraCreateRasterToField",
+            self.algResults = processing.run("idragrasatcuts:IdragraCreateRasterToField",
                                              {'FIELD_LAY': self.algResults['OUT_LAY'],
                                               'RASTER_LIST': im_raster_list,
                                               'FLD_NAME_LIST': fld_names,
@@ -131,7 +131,7 @@ class ExportGeodataVector(QObject):
 
         # make a new shapefile with main landuse, soil, irrigation methods, irrigation units and meteo weights
         #print('self.sim_dict',self.sim_dict)
-        self.algResults = processing.run("idragratools:IdragraCreateFieldTable",
+        self.algResults = processing.run("idragrasatcuts:IdragraCreateFieldTable",
                        {'FIELD_LAY': self.algResults['OUT_LAY'],
                         'LU_LAY': db_name + '|layername=idr_usemap', 'LU_COL': 'extid',
                         'SOIL_LAY': db_name + '|layername=idr_soilmap', 'SOIL_COL': 'extid',
@@ -186,7 +186,7 @@ class ExportGeodataVector(QObject):
         sourceTable = db_name + '|layername=idr_soil_profiles'
         depths = ' '.join([str(x) for x in depthList])
         # make aggregate soil params
-        self.algResults2 = processing.run("idragratools:IdragraSoilParams",
+        self.algResults2 = processing.run("idragrasatcuts:IdragraSoilParams",
                                          {'SOURCE_TABLE': sourceTable,
                                           'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxdepth',
                                           'KSAT_FLD': 'ksat',
@@ -214,7 +214,7 @@ class ExportGeodataVector(QObject):
             break
 
         # make capillary rise params maps
-        self.algResults2 = processing.run("idragratools:IdragraCreateCapriseTable",
+        self.algResults2 = processing.run("idragrasatcuts:IdragraCreateCapriseTable",
                                          {'SOURCE_TABLE': sourceTable,
                                           'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxdepth',
                                           'TXTR_FLD': 'txtr_code', 'DEPTHS': depths,
@@ -246,7 +246,7 @@ class ExportGeodataVector(QObject):
         self.feedback.pushInfo(self.tr('Exporting HSG map'))
         self.feedback.setProgress(70.0)
 
-        self.algResults2 = processing.run("idragratools:IdragraCreatePreHSGTable",
+        self.algResults2 = processing.run("idragrasatcuts:IdragraCreatePreHSGTable",
                                           {'SOURCE_TABLE': sourceTable,
                                            'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxdepth', 'KSAT_FLD': 'ksat',
                                            'OUT_TABLE': 'TEMPORARY_OUTPUT'},
@@ -438,7 +438,7 @@ class ExportGeodataVector(QObject):
         cellListFile = os.path.join(self.sim_dict['OUTPUTPATH'], 'cells.txt')
         controlPointMap = db_name + '|layername=idr_control_points'
 
-        processing.run("idragratools:IdragraExportControlPointsVector",
+        processing.run("idragrasatcuts:IdragraExportControlPointsVector",
                        {'DOMAIN_LAY': final_file, 'ROW_COL': 'row_count',
                         'CP_LAY': controlPointMap, 'ID_COL': 'id',
                         'DEST_FILE': cellListFile})

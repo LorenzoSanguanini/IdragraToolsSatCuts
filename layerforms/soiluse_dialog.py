@@ -35,9 +35,9 @@ from qgis.gui import *
 
 #from QWaDiS.layerforms.utils import *
 
-from IdragraTools.layerforms.utils import toFloat, parseString, toInt,updateListItems
+from IdragraToolsSatCuts.layerforms.utils import toFloat, parseString, toInt,updateListItems
 
-from tools.array_table_model import ArrayTableModel
+from ..tools.array_table_model import ArrayTableModel
 
 
 def formOpen(dialog,layerid,featureid):
@@ -48,8 +48,8 @@ def formOpen(dialog,layerid,featureid):
 	global feature
 	feature = featureid
 		
-	tr = qgis.utils.plugins['IdragraTools'].tr
-	getIdNameDict = qgis.utils.plugins['IdragraTools'].getIdNameDict
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
+	getIdNameDict = qgis.utils.plugins['IdragraToolsSatCuts'].getIdNameDict
 	
 	# prepare a list of widget to enable/disable
 	global objToBeEnabledList
@@ -114,14 +114,14 @@ def updatePlot(cropIdsText):
 	dpi = screen.logicalDotsPerInch()
 	w=w/dpi
 	h = 1+len(cropIds)
-	pixmap = qgis.utils.plugins['IdragraTools'].makeDistroPlot(cropIds,w,h)
+	pixmap = qgis.utils.plugins['IdragraToolsSatCuts'].makeDistroPlot(cropIds,w,h)
 
 	# imageLBL.setPixmap(pixmap.scaled(w,h,Qt.IgnoreAspectRatio))
 	imageLBL.setPixmap(pixmap.scaled(0.9*w*dpi,0.9*h*dpi,Qt.KeepAspectRatio,Qt.SmoothTransformation))
 
 
 def showEditDialog():
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	# extract data
 	t = parseString(croplistLE.text(),' ',toInt)
 	# replace data with names
@@ -138,7 +138,7 @@ def showEditDialog():
 	data = list(map(list, data))
 	header = [tr('Crop')]
 	# make a dialog
-	from IdragraTools.layerforms.table_dialog import TableDialog
+	from IdragraToolsSatCuts.layerforms.table_dialog import TableDialog
 	dlg = TableDialog(parent=myDialog, title='View/edit table')
 	dlg.setEditMode(layer.isEditable())
 	# make the model with data

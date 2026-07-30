@@ -30,8 +30,8 @@ __revision__ = '$Format:%H$'
 
 from PyQt5.QtWidgets import *
 
-from IdragraTools.layerforms.utils import *
-from IdragraTools.tools.array_table_model import ArrayTableModel
+from IdragraToolsSatCuts.layerforms.utils import *
+from IdragraToolsSatCuts.tools.array_table_model import ArrayTableModel
 
 def formOpen(dialog,layerid,featureid):
 	global myDialog
@@ -42,7 +42,7 @@ def formOpen(dialog,layerid,featureid):
 	feature = featureid
 	
 	# option list to update
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	#global allItems
 	ph_rItems = {tr('Day-neutral plants'):0,
 				 tr('Long-day plants'):1,
@@ -118,7 +118,7 @@ def setEditMode(mode):
 		print('error: %s'%str(e))
 		
 def showEditDialog():
-	tr = qgis.utils.plugins['IdragraTools'].tr
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
 	# extract data
 	gdd = parseString(myDialog.findChild(QLineEdit,'gdd').text(),' ',toSpecialInt)
 	kcb = parseString(myDialog.findChild(QLineEdit,'kcb').text())
@@ -133,7 +133,7 @@ def showEditDialog():
 
 	header = [tr('Growing degree days'),tr('Crop coefficient'),tr('Leaf area index'),tr('Crop heigth'),tr('Root depth')]
 	# make a dialog
-	from IdragraTools.layerforms.table_dialog import TableDialog
+	from IdragraToolsSatCuts.layerforms.table_dialog import TableDialog
 	dlg = TableDialog(parent=myDialog,title = 'View/edit table')
 	dlg.setEditMode(layer.isEditable())
 	# make the model with data

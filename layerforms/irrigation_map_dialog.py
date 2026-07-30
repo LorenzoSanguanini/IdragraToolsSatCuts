@@ -30,7 +30,7 @@ __revision__ = '$Format:%H$'
 
 from PyQt5.QtWidgets import *
 
-from IdragraTools.layerforms.utils import *
+from IdragraToolsSatCuts.layerforms.utils import *
 
 def formOpen(dialog,layerid,featureid):
 	global myDialog
@@ -40,8 +40,8 @@ def formOpen(dialog,layerid,featureid):
 	global feature
 	feature = featureid
 	
-	tr = qgis.utils.plugins['IdragraTools'].tr
-	getIdNameDict = qgis.utils.plugins['IdragraTools'].getIdNameDict
+	tr = qgis.utils.plugins['IdragraToolsSatCuts'].tr
+	getIdNameDict = qgis.utils.plugins['IdragraToolsSatCuts'].getIdNameDict
 
 	# prepare a list of widget to enable/disable
 	global objToBeEnabledList
@@ -53,7 +53,7 @@ def formOpen(dialog,layerid,featureid):
 	setEditMode(layer.isEditable())
 		
 	# connect start edit button to setEditMode to get edit tool pressed	
-	#qgis.utils.plugins['IdragraTools'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
+	#qgis.utils.plugins['IdragraToolsSatCuts'].iface.actionToggleEditing().toggled[bool].connect(setEditMode)
 	try:
 		parentForm = myDialog.window() 
 		act = parentForm.findChild(QAction,'mActionToggleEditing')

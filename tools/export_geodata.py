@@ -40,6 +40,8 @@ from .compact_dataset import save2idragra
 from .gis_grid import GisGrid
 from .utils import returnExtent
 from .write_pars_to_template import writeParsToTemplate
+from .satellite_cuts import getForcedCuts, getHaltDaysByCrop, buildCellCuts, \
+	exportForcedCuts, exportIrrHaltDays
 from datetime import date
 
 
@@ -66,7 +68,7 @@ class Exporter(QObject):
 		laySource = DBM.DBName+ '|layername=idr_distrmap'
 		fieldName = 'id'
 
-		self.algResults = processing.run("idragratools:IdragraRasterizeMap",
+		self.algResults = processing.run("idragrasatcuts:IdragraRasterizeMap",
 								   {'VECTOR_LAY': laySource, 'VECTOR_FLD': fieldName,
 									'RASTER_EXT': extent,
 									'CELL_DIM': cellSize,
@@ -79,7 +81,7 @@ class Exporter(QObject):
 		fieldName = 'distr_eff'
 
 		self.feedback.setProgress(35.0)
-		self.algResults = processing.run("idragratools:IdragraRasterizeMap",
+		self.algResults = processing.run("idragrasatcuts:IdragraRasterizeMap",
 									{'VECTOR_LAY': laySource, 'VECTOR_FLD': fieldName,
 									 'RASTER_EXT': extent,
 									 'CELL_DIM': cellSize,
@@ -118,7 +120,7 @@ class Exporter(QObject):
 		fileName = os.path.join(outPath, 'soilid' + '.asc')
 		soilMap = DBM.DBName + '|layername=idr_soilmap'
 		fieldName = 'extid'
-		self.algResults = processing.run("idragratools:IdragraRasterizeMap",
+		self.algResults = processing.run("idragrasatcuts:IdragraRasterizeMap",
 										 {'VECTOR_LAY': soilMap, 'VECTOR_FLD': fieldName,
 										  'RASTER_EXT': extent,
 										  'CELL_DIM': cellSize,
@@ -130,7 +132,7 @@ class Exporter(QObject):
 		depths = ' '.join([str(x) for x in depthList])
 		print('depths:',depths)
 		# make aggregate soil params
-		self.algResults = processing.run("idragratools:IdragraSoilParams",
+		self.algResults = processing.run("idragrasatcuts:IdragraSoilParams",
 									{'SOURCE_TABLE':sourceTable,
 									 'SOILID_FLD':'soilid','MAXDEPTH_FLD':'maxdepth',
 									 'KSAT_FLD':'ksat',
@@ -139,7 +141,7 @@ class Exporter(QObject):
 									context=None, feedback=self.feedback, is_child_algorithm=False)
 
 		# export to maps
-		self.algResults =  processing.run("idragratools:IdragraRasterizeMaptable",
+		self.algResults =  processing.run("idragrasatcuts:IdragraRasterizeMaptable",
 									 {'TABLE_LAY': self.algResults['OUT_TABLE'],# export aggregate params maps by aritmetic mean ...
 									  'TABLE_FLD': 'soilid', 'VECTOR_LAY': soilMap,
 									  'VECTOR_FLD': 'extid', 'RASTER_LAY': None,
@@ -148,7 +150,7 @@ class Exporter(QObject):
 									 context=None, feedback=self.feedback, is_child_algorithm=False)
 
 		# make capillary rise params maps
-		self.algResults = processing.run("idragratools:IdragraCreateCapriseTable",
+		self.algResults = processing.run("idragrasatcuts:IdragraCreateCapriseTable",
 					   {'SOURCE_TABLE': sourceTable,
 						'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxdepth',
 						'TXTR_FLD': 'txtr_code', 'DEPTHS': depths,
@@ -156,7 +158,7 @@ class Exporter(QObject):
 					   context=None, feedback=self.feedback, is_child_algorithm=False)
 
 		# export capillary rise params maps...
-		self.algResults = processing.run("idragratools:IdragraRasterizeMaptable", {
+		self.algResults = processing.run("idragrasatcuts:IdragraRasterizeMaptable", {
 			'TABLE_LAY': self.algResults['OUT_TABLE'],
 			'TABLE_FLD': 'soilid', 'VECTOR_LAY': soilMap,
 			'VECTOR_FLD': 'extid', 'RASTER_LAY': None,
@@ -168,7 +170,7 @@ class Exporter(QObject):
 		self.feedback.pushInfo(self.tr('Exporting HSG map'))
 		self.feedback.setProgress(70.0)
 
-		self.algResults1 = processing.run("idragratools:IdragraCreatePreHSGTable",
+		self.algResults1 = processing.run("idragrasatcuts:IdragraCreatePreHSGTable",
 								   {'SOURCE_TABLE': sourceTable,
 									'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxdepth', 'KSAT_FLD': 'ksat',
 									'OUT_TABLE': 'TEMPORARY_OUTPUT'},
@@ -195,7 +197,7 @@ class Exporter(QObject):
 
 			break
 
-		self.algResults = processing.run("idragratools:IdragraCreateHSGMap", {
+		self.algResults = processing.run("idragrasatcuts:IdragraCreateHSGMap", {
 									'SOURCE_TABLE': self.algResults1['OUT_TABLE'],
 									'SOILID_FLD': 'soilid', 'MAXDEPTH_FLD': 'maxsoildepth', 'MIN_KS50': 'minksat50', 'MIN_KS60': 'minksat60',
 									'MIN_KS100': 'minksat100', 'SOIL_MAP': self.algResults2['OUTPUT'],
@@ -211,7 +213,7 @@ class Exporter(QObject):
 		landuseMap = DBM.DBName + '|layername=idr_usemap'
 		defaultValue = -9999
 		if self.simdic['DEFAULT_LU']: defaultValue = self.simdic['DEFAULT_LU']
-		processing.run("idragratools:IdragraRasterizeTimeMap",
+		processing.run("idragrasatcuts:IdragraRasterizeTimeMap",
 					   {'VECTOR_LAY': landuseMap, 'DATA_FLD': 'extid',
 						'TIME_FLD': 'date', 'NAME_FORMAT': 'soiluse',
 						'RASTER_EXT': extent,
@@ -228,7 +230,7 @@ class Exporter(QObject):
 		defaultValue = -9999
 		if self.simdic['DEFAULT_IM']: defaultValue = self.simdic['DEFAULT_IM']
 
-		processing.run("idragratools:IdragraRasterizeTimeMap",
+		processing.run("idragrasatcuts:IdragraRasterizeTimeMap",
 					   {'VECTOR_LAY': irrMethodsMap, 'DATA_FLD': 'extid',
 						'TIME_FLD': 'date', 'NAME_FORMAT': 'irr_meth',
 						'RASTER_EXT': extent,
@@ -266,7 +268,7 @@ class Exporter(QObject):
 
 		# rasterize time maps of irrigation efficiency
 		# efficiency is set to zero by default in order to accidentally compute irrigation requirements
-		processing.run("idragratools:IdragraRasterizeTimeMap",
+		processing.run("idragrasatcuts:IdragraRasterizeTimeMap",
 					   {'VECTOR_LAY': joinedLay, 'DATA_FLD': 'irr_eff',
 						'TIME_FLD': 'date', 'NAME_FORMAT': 'irr_eff',
 						'RASTER_EXT': extent,
@@ -279,7 +281,7 @@ class Exporter(QObject):
 		self.feedback.setProgress(90.0)
 		outputSlopeFile = os.path.join(outPath,'slope.asc')
 		if dtm:
-			self.algResults = processing.run("idragratools:IdragraMakeSlope",
+			self.algResults = processing.run("idragrasatcuts:IdragraMakeSlope",
 						   {'DTM_LAY': dtm,
 							'EXTENT': extent,
 							'CELLSIZE': cellSize,
@@ -287,7 +289,7 @@ class Exporter(QObject):
 							'OUTSLOPE_LAY': 'TEMPORARY_OUTPUT'},
 							context=None, feedback=self.feedback, is_child_algorithm=False)
 
-			processing.run("idragratools:IdragraSaveAscii",
+			processing.run("idragrasatcuts:IdragraSaveAscii",
 						   {'INPUT':self.algResults['OUTSLOPE_LAY'], 'DIGITS': 6,
 							'OUTPUT': outputSlopeFile},
 						   context=None, feedback=self.feedback, is_child_algorithm=False)
@@ -312,7 +314,7 @@ class Exporter(QObject):
 					# make a general water table for the first year
 					self.feedback.pushInfo(self.tr('A base waterdepth map was set for the simulation period'))
 					wtdepthName = os.path.join(outPath, 'waterdepth.asc')  # remove month and day
-					processing.run("idragratools:IdragraCalcWaterDepth", {'DTM': dtm,
+					processing.run("idragrasatcuts:IdragraCalcWaterDepth", {'DTM': dtm,
 																		  'WATERTABLE': waterTable,
 																		  'EXTENT': extent,
 																		  'CELLSIZE': cellSize,
@@ -331,7 +333,7 @@ class Exporter(QObject):
 
 					#wtdepthName = os.path.join(outPath,'waterdepth'+var[10:-4]+'.asc') # remove month and day
 					wtdepthName = os.path.join(outPath, 'waterdepth' + str(year)+'_'+ str(nOfDays) + '.asc')  # set year and num of days from the beginning
-					processing.run("idragratools:IdragraCalcWaterDepth", {'DTM': dtm,
+					processing.run("idragrasatcuts:IdragraCalcWaterDepth", {'DTM': dtm,
 																		  'WATERTABLE': waterTable,
 																		  'EXTENT': extent,
 																		  'CELLSIZE': cellSize,
@@ -355,7 +357,7 @@ class Exporter(QObject):
 		fileList = glob.glob(os.path.join(outPath, '*.asc'))
 		#feedback.pushInfo(tr('Map List: %s'%fileList))
 
-		processing.run("idragratools:IdragraRasterizeDomain", {
+		processing.run("idragrasatcuts:IdragraRasterizeDomain", {
 			'INPUT_LIST': fileList,
 			'RASTER_EXT': extent,
 			'CELL_DIM': cellSize, 'DEST_FILE': domainFile},
@@ -364,7 +366,7 @@ class Exporter(QObject):
 		# export hydrological condition set to 1
 		hydrcondFile = os.path.join(outPath, 'hydr_cond.asc')
 
-		processing.run("idragratools:IdragraRasterizeDomain", {
+		processing.run("idragrasatcuts:IdragraRasterizeDomain", {
 			'INPUT_LIST': [domainFile],
 			'RASTER_EXT': extent,
 			'CELL_DIM': cellSize, 'DEST_FILE': hydrcondFile},
@@ -382,7 +384,7 @@ class Exporter(QObject):
 		# TODO: max_num is always 5
 		self.feedback.setText(self.tr('Export weight maps'))
 		wsLaySource = DBM.DBName + '|layername=idr_weather_stations'
-		processing.run("idragratools:IdragraExportWeights",
+		processing.run("idragrasatcuts:IdragraExportWeights",
 					   {'VECTOR_LAYER': wsLaySource,
 						'ID_FLD':'id',
 						'MAX_NUM': 5, 'RASTER_LAY': None,
@@ -429,10 +431,87 @@ class Exporter(QObject):
 		cellListFile = os.path.join(self.simdic['OUTPUTPATH'], 'cells.txt')
 		controlPointMap = DBM.DBName + '|layername=idr_control_points'
 
-		processing.run("idragratools:IdragraExportControlPointsGrid",
+		processing.run("idragrasatcuts:IdragraExportControlPointsGrid",
 					   {'VECTOR_LAY': controlPointMap,
 						'RASTER_EXT': extent,
 						'CELL_DIM': self.simdic['CELLSIZE'], 'DEST_FILE': cellListFile},
 					   context=None, feedback=self.feedback, is_child_algorithm=False)
 
+		# giorni di sospensione dell'irrigazione attorno ai tagli, per coltura.
+		# Esportato SEMPRE, non solo con i tagli satellitari attivi: la sospensione e'
+		# una proprieta' della coltura e vale anche per i campi che seguono il
+		# calendario a gradi-giorno di cropcoef.
+		try:
+			nHalt = exportIrrHaltDays(getHaltDaysByCrop(DBM),
+									  os.path.join(outPath, 'irr_halt_days.txt'))
+			self.feedback.pushInfo(self.tr('Written irr_halt_days.txt (%s crops)') % nHalt)
+		except Exception as e:
+			self.feedback.reportError(self.tr('Cannot export irrigation halt days: %s') % str(e), False)
+
+		# export satellite-detected cuts (optional, only if enabled in "Set simulation")
+		try:
+			self.exportSatelliteCuts(DBM, outPath, extent, cellSize, yearList)
+		except Exception as e:
+			self.feedback.reportError(self.tr('Cannot export satellite cuts: %s') % str(e), False)
+
 		self.feedback.setPercentage(100.0)
+
+	def exportSatelliteCuts(self, DBM, outPath, extent, cellSize, yearList):
+		"""Scrive forced_cuts.txt a partire dai tagli
+		memorizzati per POLIGONO in idr_forced_cuts.
+
+		I tagli sono una proprieta' del poligono: la conversione in celle avviene
+		qui, alla risoluzione corrente, quindi cambiando la dimensione di cella i
+		tagli finiscono automaticamente sulle celle giuste senza reimportare nulla.
+		"""
+		if not self.simdic.get('USESATCUTS', False):
+			return
+
+		self.feedback.setText(self.tr('Export satellite-detected cuts'))
+
+		years = [int(y) for y in yearList if str(y).strip() != '']
+		cutsByFieldYear = getForcedCuts(DBM, years)
+		if not cutsByFieldYear:
+			self.feedback.pushInfo(self.tr('No satellite cut found in the database: skipped.'))
+			return
+
+		haltDaysByCrop = getHaltDaysByCrop(DBM)
+
+		# raster con l'id del poligono di idr_usemap, alla risoluzione corrente
+		landuseMap = DBM.DBName + '|layername=idr_usemap'
+		processing.run("idragrasatcuts:IdragraRasterizeTimeMap",
+					   {'VECTOR_LAY': landuseMap, 'DATA_FLD': 'id',
+						'TIME_FLD': 'date', 'NAME_FORMAT': 'fieldid',
+						'RASTER_EXT': extent,
+						'CELL_DIM': cellSize,
+						'INIT_VALUE': -9999,
+						'YEAR_LIST': ' '.join([str(y) for y in years]),
+						'DEST_FOLDER': outPath},
+					   context=None, feedback=self.feedback, is_child_algorithm=False)
+
+		allCuts = []
+		allHalt = {}
+		for y in years:
+			fieldIdFile = os.path.join(outPath, 'fieldid_%s.asc' % y)
+			if not os.path.exists(fieldIdFile):
+				self.feedback.reportError(self.tr('Missing field id raster for year %s') % y, False)
+				continue
+			soiluseFile = os.path.join(outPath, 'soiluse_%s.asc' % y)
+			cells, halt = buildCellCuts(fieldIdFile, cutsByFieldYear, y,
+										soiluseFile, haltDaysByCrop,
+										feedback=self.feedback)
+			allCuts += cells
+			allHalt.update(halt)
+
+		if not allCuts:
+			self.feedback.pushInfo(self.tr('No cut mapped on the simulation grid: skipped.'))
+			return
+
+		# forced_cuts.txt va tra i dati spaziali (InputPath), letto da IdrAgra
+		nCuts = exportForcedCuts(allCuts, os.path.join(outPath, 'forced_cuts.txt'))
+		self.feedback.pushInfo(self.tr('Written forced_cuts.txt (%s records)') % nCuts)
+
+		# irrigation_blackout.txt NON viene piu' scritto: elencava le finestre cella per
+		# cella partendo dai soli tagli satellitari, quindi i campi lasciati al calendario
+		# GDD non ricevevano nessuna sospensione e venivano irrigati piu' dei vicini.
+		# Adesso la sospensione la applica IdrAgra, per coltura, con irr_halt_days.txt.

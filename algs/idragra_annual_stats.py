@@ -77,7 +77,7 @@ from datetime import datetime,timedelta
 
 import os
 
-from algs.date_time_widget import DateTimeWidget
+from ..algs.date_time_widget import DateTimeWidget
 from ..tools.read_idragra_parameters import readIdragraParameters
 from ..tools.gis_grid import GisGrid
 from ..tools.utils import isLeap
@@ -186,12 +186,12 @@ class IdragraAnnualStats(QgsProcessingAlgorithm):
 		Here we define the inputs and output of the algorithm, along
 		with some other properties.
 		"""
-		self.ANNUALVARS = qgis.utils.plugins['IdragraTools'].ANNUALVARS
+		self.ANNUALVARS = qgis.utils.plugins['IdragraToolsSatCuts'].ANNUALVARS
 
-		self.GROUPBYRASTER =  qgis.utils.plugins['IdragraTools'].GROUPBYRASTER
-		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraTools'].AGGRFUNCTIONS
+		self.GROUPBYRASTER =  qgis.utils.plugins['IdragraToolsSatCuts'].GROUPBYRASTER
+		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraToolsSatCuts'].AGGRFUNCTIONS
 
-		self.TIMESTEP = qgis.utils.plugins['IdragraTools'].TIMESTEP
+		self.TIMESTEP = qgis.utils.plugins['IdragraToolsSatCuts'].TIMESTEP
 
 		#### PARAMETERS ####
 

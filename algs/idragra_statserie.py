@@ -77,8 +77,8 @@ from datetime import datetime, timedelta
 
 import os
 
-from algs.date_time_widget import DateTimeWidget
-from tools.gis_grid import GisGrid
+from ..algs.date_time_widget import DateTimeWidget
+from ..tools.gis_grid import GisGrid
 from ..tools.utils import isLeap
 
 
@@ -186,12 +186,12 @@ class IdragraStatserie(QgsProcessingAlgorithm):
 		Here we define the inputs and output of the algorithm, along
 		with some other properties.
 		"""
-		self.STEPNAME = qgis.utils.plugins['IdragraTools'].STEPNAME
-		self.GROUPBY =  qgis.utils.plugins['IdragraTools'].GROUPBY
+		self.STEPNAME = qgis.utils.plugins['IdragraToolsSatCuts'].STEPNAME
+		self.GROUPBY =  qgis.utils.plugins['IdragraToolsSatCuts'].GROUPBY
 
-		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraTools'].AGGRFUNCTIONS
+		self.AGGRFUNCTIONS = qgis.utils.plugins['IdragraToolsSatCuts'].AGGRFUNCTIONS
 
-		self.TIMESTEP = qgis.utils.plugins['IdragraTools'].TIMESTEP
+		self.TIMESTEP = qgis.utils.plugins['IdragraToolsSatCuts'].TIMESTEP
 
 		#### PARAMETERS ####
 
@@ -302,7 +302,7 @@ class IdragraStatserie(QgsProcessingAlgorithm):
 
 		# call aggregation algorithm
 		tempFile = QgsProcessingUtils.generateTempFilename('aggrOutput.gpkg')
-		# algResults = processing.run("idragratools:IdragraGroupStats",
+		# algResults = processing.run("idragrasatcuts:IdragraGroupStats",
 		# 						   {'IDRAGRA_FILE': idragraFile,
 		# 							'AGGR_LAY': aggrLay, 'AGGR_FLD': aggrFld,
 		# 							'AGGR_VAR': varIdx, 'AGGR_FUN': aggrFunIdx,
@@ -312,7 +312,7 @@ class IdragraStatserie(QgsProcessingAlgorithm):
 		# 						   is_child_algorithm=True
 		# 						   )
 
-		algResults = processing.run("idragratools:IdragraGroupStatsByRaster",
+		algResults = processing.run("idragrasatcuts:IdragraGroupStatsByRaster",
 					   {'IDRAGRA_FILE': idragraFile,
 						'AGGR_LAY': 'irr_units', 'AGGR_VAR': varIdx, 'AGGR_FUN': aggrFunIdx,
 						'OUTPUT_TABLE': tempFile},

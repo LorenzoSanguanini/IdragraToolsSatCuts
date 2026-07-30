@@ -34,7 +34,7 @@ from qgis.core import QgsVectorLayer
 import os
 import numpy as np
 
-from tools.check_value import checkValue
+from ..tools.check_value import checkValue
 
 
 def queryDB(sql,DBM,feedback,tr):
